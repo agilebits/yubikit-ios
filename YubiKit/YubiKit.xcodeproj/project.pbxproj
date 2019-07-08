@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		932D1BAB22D3DC620068F2A2 /* YKFQRCodeScanOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 956DB66E20639C2B006B1738 /* YKFQRCodeScanOverlayView.m */; };
+		932D1BAC22D3DC7B0068F2A2 /* YKFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C2963C2062634C0091318B /* YKFViewController.m */; };
 		93B098AC22C5948300522BDB /* YKFWebAuthnClientData.h in Headers */ = {isa = PBXBuildFile; fileRef = 956991F222C224BC00C5EB02 /* YKFWebAuthnClientData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93B098AD22C5948300522BDB /* YKFKeyAPDUError.h in Headers */ = {isa = PBXBuildFile; fileRef = 9551882E2265F4EE001A4191 /* YKFKeyAPDUError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93B098AE22C5948300522BDB /* YKFKeyOATHError.h in Headers */ = {isa = PBXBuildFile; fileRef = 9551882A2265E8DE001A4191 /* YKFKeyOATHError.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -159,8 +161,6 @@
 		93B0994122C594A400522BDB /* YKFFIDO2MakeCredentialAPDU.m in Sources */ = {isa = PBXBuildFile; fileRef = 9578A61421F20BA400349DCF /* YKFFIDO2MakeCredentialAPDU.m */; };
 		93B0994222C594A400522BDB /* YKFKeyOATHCalculateResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 9547C9DC216B59E2001E1F4A /* YKFKeyOATHCalculateResponse.m */; };
 		93B0994322C594A400522BDB /* YKFNSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 95DD40772099A4EB00363FEE /* YKFNSDataAdditions.m */; };
-		93B0994422C594A400522BDB /* YKFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C2963C2062634C0091318B /* YKFViewController.m */; };
-		93B0994522C594A400522BDB /* YKFQRCodeScanOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 956DB66E20639C2B006B1738 /* YKFQRCodeScanOverlayView.m */; };
 		93B0994622C594A400522BDB /* YKFFIDO2PinAuthKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 952CB9EB220D835F004A7624 /* YKFFIDO2PinAuthKey.m */; };
 		93B0994722C594A400522BDB /* YKFKeyU2FService.m in Sources */ = {isa = PBXBuildFile; fileRef = 95DD40A12099A8A300363FEE /* YKFKeyU2FService.m */; };
 		93B0994822C594A400522BDB /* YKFOTPTokenParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C296402062653E0091318B /* YKFOTPTokenParser.m */; };
@@ -1599,11 +1599,13 @@
 				93B0993222C594A400522BDB /* YKFPCSCLayer.m in Sources */,
 				93B0990D22C594A400522BDB /* YKFKeyU2FError.m in Sources */,
 				93B0994D22C594A400522BDB /* YKFKeyCommandConfiguration.m in Sources */,
+				932D1BAC22D3DC7B0068F2A2 /* YKFViewController.m in Sources */,
 				93B0991A22C594A400522BDB /* YKFKeyOATHResetRequest.m in Sources */,
 				93B0991722C594A400522BDB /* YKFNSStringAdditions.m in Sources */,
 				93B0993E22C594A400522BDB /* YKFAPDU.m in Sources */,
 				93B0992E22C594A400522BDB /* YKFKeyOATHListResponse.m in Sources */,
 				93B0993022C594A400522BDB /* YKFKeyFIDO2VerifyPinRequest.m in Sources */,
+				932D1BAB22D3DC620068F2A2 /* YKFQRCodeScanOverlayView.m in Sources */,
 				93B0992B22C594A400522BDB /* YKFKeyFIDO2GetInfoResponse.m in Sources */,
 				93B0991522C594A400522BDB /* YKFNSMutableDataAdditions.m in Sources */,
 				93B0993722C594A400522BDB /* YKFKeyU2FRegisterResponse.m in Sources */,
@@ -1684,11 +1686,9 @@
 				93B098F322C594A400522BDB /* YKFKeyOATHCalculateRequest.m in Sources */,
 				93B0994722C594A400522BDB /* YKFKeyU2FService.m in Sources */,
 				93B0992622C594A400522BDB /* YKFFIDO2Type.m in Sources */,
-				93B0994422C594A400522BDB /* YKFViewController.m in Sources */,
 				93B098E922C594A400522BDB /* YKFFIDO2ClientPinAPDU.m in Sources */,
 				93B0993D22C594A400522BDB /* YKFSelectU2FApplicationAPDU.m in Sources */,
 				93B0994B22C594A400522BDB /* YKFKeyOATHRequest.m in Sources */,
-				93B0994522C594A400522BDB /* YKFQRCodeScanOverlayView.m in Sources */,
 				93B0992D22C594A400522BDB /* YKFKeyOATHSetCodeRequest.m in Sources */,
 				93B0995022C594A400522BDB /* YKFU2FRegisterAPDU.m in Sources */,
 				93B0993522C594A400522BDB /* YKFKeyFIDO2SetPinRequest.m in Sources */,
@@ -1869,6 +1869,7 @@
 		93B098A922C592D200522BDB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -1884,7 +1885,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.agilebits.YubiKitFramework;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yubico.YubiKitFramework;
 				PRODUCT_NAME = YubiKit;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -1899,6 +1900,7 @@
 		93B098AA22C592D200522BDB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -1913,7 +1915,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.agilebits.YubiKitFramework;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yubico.YubiKitFramework;
 				PRODUCT_NAME = YubiKit;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
