@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+#import <UIKit/UIKit.h>
+
 #import <Foundation/Foundation.h>
 #import "YKFKeyDescription.h"
 
@@ -19,6 +21,8 @@
 #import "YKFKeyFIDO2Service.h"
 #import "YKFKeyOATHService.h"
 #import "YKFKeyRawCommandService.h"
+
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  * ---------------------------------------------------------------------------------------------------------------------
@@ -48,6 +52,19 @@ typedef NS_ENUM(NSUInteger, YKFKeySessionState) {
 
 /**
  * ---------------------------------------------------------------------------------------------------------------------
+ * @name YFKeySessionApplication Protocol
+ * ---------------------------------------------------------------------------------------------------------------------
+ */
+@protocol YFKeySessionApplication <NSObject>
+
+- (UIBackgroundTaskIdentifier)beginBackgroundTaskWithName:(nullable NSString *)taskName expirationHandler:(void(^ __nullable)(void))handler;
+- (void)endBackgroundTask:(UIBackgroundTaskIdentifier)identifier;
+- (UIApplicationState)applicationState;
+
+@end
+
+/**
+ * ---------------------------------------------------------------------------------------------------------------------
  * @name YKFKeySession Protocol
  * ---------------------------------------------------------------------------------------------------------------------
  */
@@ -56,6 +73,15 @@ typedef NS_ENUM(NSUInteger, YKFKeySessionState) {
  Defines the interface for YKFKeySession.
  */
 @protocol YKFKeySessionProtocol<NSObject>
+
+/*!
+ @property application
+
+ @abstract
+ This property allows the caller to set the application instance, making this safer for use in code that has to be extension API-only safe.
+
+ */
+@property (nonatomic, strong) id<YFKeySessionApplication> application;
 
 /*!
  @property sessionState
@@ -208,8 +234,6 @@ typedef NS_ENUM(NSUInteger, YKFKeySessionState) {
  * @name YKFKeySession
  * ---------------------------------------------------------------------------------------------------------------------
  */
-
-NS_ASSUME_NONNULL_BEGIN
 
 /*!
  @class YKFKeySession
