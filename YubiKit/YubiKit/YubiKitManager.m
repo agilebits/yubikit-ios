@@ -22,7 +22,7 @@
 
 @interface YubiKitManager()
 
-@property (nonatomic, readwrite) id<YKFNFCReaderSessionProtocol> nfcReaderSession NS_AVAILABLE_IOS(11.0);
+//@property (nonatomic, readwrite) id<YKFNFCReaderSessionProtocol> nfcReaderSession NS_AVAILABLE_IOS(11.0);
 //@property (nonatomic, readwrite) id<YKFQRReaderSessionProtocol> qrReaderSession;
 @property (nonatomic, readwrite) id<YKFKeySessionProtocol> keySession;
 
@@ -45,7 +45,7 @@ static id<YubiKitManagerProtocol> sharedInstance;
     if (self) {
         if (@available(iOS 11, *)) {
             // Init with defaults
-            self.nfcReaderSession = [[YKFNFCReaderSession alloc] initWithTokenParser:nil session:nil];
+//            self.nfcReaderSession = [[YKFNFCReaderSession alloc] initWithTokenParser:nil session:nil];
         }
         //self.qrReaderSession = [[YKFQRReaderSession alloc] init];
         
@@ -56,5 +56,7 @@ static id<YubiKitManagerProtocol> sharedInstance;
     }
     return self;
 }
+
+@synthesize nfcReaderSession;
 
 @end

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		93394AD222E23D970070B6CC /* YubiKitDeviceCapabilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C2965320629FD10091318B /* YubiKitDeviceCapabilities.m */; };
-		93394AD322E23D9B0070B6CC /* YKFNFCReaderSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C2964C20628EBE0091318B /* YKFNFCReaderSession.m */; };
 		93394AD422E23DB10070B6CC /* CoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C2961E206247450091318B /* CoreNFC.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		93B098AC22C5948300522BDB /* YKFWebAuthnClientData.h in Headers */ = {isa = PBXBuildFile; fileRef = 956991F222C224BC00C5EB02 /* YKFWebAuthnClientData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93B098AD22C5948300522BDB /* YKFKeyAPDUError.h in Headers */ = {isa = PBXBuildFile; fileRef = 9551882E2265F4EE001A4191 /* YKFKeyAPDUError.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -160,7 +159,6 @@
 		93B0994322C594A400522BDB /* YKFNSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 95DD40772099A4EB00363FEE /* YKFNSDataAdditions.m */; };
 		93B0994622C594A400522BDB /* YKFFIDO2PinAuthKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 952CB9EB220D835F004A7624 /* YKFFIDO2PinAuthKey.m */; };
 		93B0994722C594A400522BDB /* YKFKeyU2FService.m in Sources */ = {isa = PBXBuildFile; fileRef = 95DD40A12099A8A300363FEE /* YKFKeyU2FService.m */; };
-		93B0994822C594A400522BDB /* YKFOTPTokenParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C296402062653E0091318B /* YKFOTPTokenParser.m */; };
 		93B0994922C594A400522BDB /* YubiKitExternalLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C2964F206295A00091318B /* YubiKitExternalLocalization.m */; };
 		93B0994B22C594A400522BDB /* YKFKeyOATHRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 955BCC03215A43A000C2EA2B /* YKFKeyOATHRequest.m */; };
 		93B0994C22C594A400522BDB /* YKFKeyRawCommandService.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D5E2D8218712BF00AA1C11 /* YKFKeyRawCommandService.m */; };
@@ -1586,7 +1584,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93394AD322E23D9B0070B6CC /* YKFNFCReaderSession.m in Sources */,
 				93B098F522C594A400522BDB /* YKFKeyOATHPutRequest.m in Sources */,
 				93B0990C22C594A400522BDB /* YKFKeyFIDO2MakeCredentialRequest.m in Sources */,
 				93B0993822C594A400522BDB /* YKFKeyOATHCalculateAllResponse.m in Sources */,
@@ -1666,7 +1663,6 @@
 				93B0994122C594A400522BDB /* YKFFIDO2MakeCredentialAPDU.m in Sources */,
 				93B0991E22C594A400522BDB /* YKFKeyService.m in Sources */,
 				93B0990E22C594A400522BDB /* YKFOATHSetCodeAPDU.m in Sources */,
-				93B0994822C594A400522BDB /* YKFOTPTokenParser.m in Sources */,
 				93B0994222C594A400522BDB /* YKFKeyOATHCalculateResponse.m in Sources */,
 				93B098FA22C594A400522BDB /* YKFKeyFIDO2GetAssertionResponse.m in Sources */,
 				93B0992822C594A400522BDB /* YKFKeyFIDO2MakeCredentialResponse.m in Sources */,
