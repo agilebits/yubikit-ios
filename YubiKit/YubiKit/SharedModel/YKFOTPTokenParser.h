@@ -13,7 +13,6 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import <CoreNFC/CoreNFC.h>
 #import "YKFOTPToken.h"
 
 typedef NS_ENUM(NSUInteger, YKFNDEFWellKnownType) {
