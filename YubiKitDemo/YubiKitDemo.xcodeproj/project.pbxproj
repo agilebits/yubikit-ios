@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		81FA3C42231D52CB009C22AB /* CustomLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA3C41231D52CB009C22AB /* CustomLogger.swift */; };
+		93CAFFEB237C74CA003C643F /* libYubiKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93CAFFE0237C74AE003C643F /* libYubiKit.a */; };
 		950A340B203DC54E005C9754 /* QRCodeScanNotAvailableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950A340A203DC54E005C9754 /* QRCodeScanNotAvailableView.swift */; };
 		950A340D203DC564005C9754 /* QRCodeScanNotAvailableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 950A340C203DC564005C9754 /* QRCodeScanNotAvailableView.xib */; };
 		950A340F203EBA1B005C9754 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950A340E203EBA1B005C9754 /* AboutViewController.swift */; };
@@ -59,7 +60,6 @@
 		95DA54D52194601500B60C18 /* PCSCDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DA54D42194601500B60C18 /* PCSCDemoViewController.swift */; };
 		95DF4A972199B5D10025A152 /* DemoCustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DF4A962199B5D10025A152 /* DemoCustomTabBar.swift */; };
 		95EAD56B220872EE00CD7C18 /* OtherDemoRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EAD56A220872EE00CD7C18 /* OtherDemoRootViewController.swift */; };
-		95F14DE02062B27C000B1278 /* libYubiKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F14DE12062B27C000B1278 /* libYubiKit.a */; };
 		95F767CC20331E4D00208B88 /* OTPWaitingScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F767CB20331E4D00208B88 /* OTPWaitingScanView.swift */; };
 		95F767CE20331E6900208B88 /* OTPWaitingScanView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F767CD20331E6900208B88 /* OTPWaitingScanView.xib */; };
 		95F767D0203337E900208B88 /* OTPScanResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F767CF203337E900208B88 /* OTPScanResultsView.swift */; };
@@ -76,8 +76,40 @@
 		95FAFAD3202C483E00121DD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95FAFAD1202C483E00121DD5 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		93CAFFDF237C74AE003C643F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93CAFFD9237C74AE003C643F /* YubiKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 95C29611206247210091318B;
+			remoteInfo = YubiKit;
+		};
+		93CAFFE1237C74AE003C643F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93CAFFD9237C74AE003C643F /* YubiKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 95885B2520A3187700828D02;
+			remoteInfo = YubiKitTests;
+		};
+		93CAFFE3237C74AE003C643F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93CAFFD9237C74AE003C643F /* YubiKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 93B098A422C592D200522BDB;
+			remoteInfo = YubiKit.framework;
+		};
+		93CAFFE6237C74C4003C643F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93CAFFD9237C74AE003C643F /* YubiKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 95C29610206247210091318B;
+			remoteInfo = YubiKit;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		81FA3C41231D52CB009C22AB /* CustomLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLogger.swift; sourceTree = "<group>"; };
+		93CAFFD9237C74AE003C643F /* YubiKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YubiKit.xcodeproj; path = ../YubiKit/YubiKit.xcodeproj; sourceTree = "<group>"; };
 		950A340A203DC54E005C9754 /* QRCodeScanNotAvailableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScanNotAvailableView.swift; sourceTree = "<group>"; };
 		950A340C203DC564005C9754 /* QRCodeScanNotAvailableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeScanNotAvailableView.xib; sourceTree = "<group>"; };
 		950A340E203EBA1B005C9754 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -157,13 +189,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95F14DE02062B27C000B1278 /* libYubiKit.a in Frameworks */,
+				93CAFFEB237C74CA003C643F /* libYubiKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		93CAFFDA237C74AE003C643F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				93CAFFE0237C74AE003C643F /* libYubiKit.a */,
+				93CAFFE2237C74AE003C643F /* YubiKitTests.xctest */,
+				93CAFFE4237C74AE003C643F /* YubiKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		9519A50523279FDD0087EE8F /* ProgressHud */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,6 +446,7 @@
 		95FAFABC202C483E00121DD5 = {
 			isa = PBXGroup;
 			children = (
+				93CAFFD9237C74AE003C643F /* YubiKit.xcodeproj */,
 				952365EB22F850AD00B8F8AB /* README.md */,
 				95C4E87523326B90008582F2 /* YK3_NFCNotes.md */,
 				95FAFAC7202C483E00121DD5 /* YubiKitDemo */,
@@ -449,6 +492,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				93CAFFE7237C74C4003C643F /* PBXTargetDependency */,
 			);
 			name = YubiKitDemo;
 			productName = YubiKitDemo;
@@ -488,12 +532,42 @@
 			mainGroup = 95FAFABC202C483E00121DD5;
 			productRefGroup = 95FAFAC6202C483E00121DD5 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 93CAFFDA237C74AE003C643F /* Products */;
+					ProjectRef = 93CAFFD9237C74AE003C643F /* YubiKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				95FAFAC4202C483E00121DD5 /* YubiKitDemo */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		93CAFFE0237C74AE003C643F /* libYubiKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libYubiKit.a;
+			remoteRef = 93CAFFDF237C74AE003C643F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		93CAFFE2237C74AE003C643F /* YubiKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = YubiKitTests.xctest;
+			remoteRef = 93CAFFE1237C74AE003C643F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		93CAFFE4237C74AE003C643F /* YubiKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = YubiKit.framework;
+			remoteRef = 93CAFFE3237C74AE003C643F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		95FAFAC3202C483E00121DD5 /* Resources */ = {
@@ -580,6 +654,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		93CAFFE7237C74C4003C643F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = YubiKit;
+			targetProxy = 93CAFFE6237C74C4003C643F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		95FAFACC202C483E00121DD5 /* Main.storyboard */ = {
@@ -721,12 +803,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = YubiKitDemo/YubiKitDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LQA3CS5MM7;
+				DEVELOPMENT_TEAM = 2BUA8C4S2C;
 				HEADER_SEARCH_PATHS = "../YubiKit/**";
 				INFOPLIST_FILE = YubiKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yubico.YubiKitDemoApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.agilebits.YubiKitDemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "YubiKitDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -742,12 +824,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = YubiKitDemo/YubiKitDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LQA3CS5MM7;
+				DEVELOPMENT_TEAM = 2BUA8C4S2C;
 				HEADER_SEARCH_PATHS = "../YubiKit/**";
 				INFOPLIST_FILE = YubiKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yubico.YubiKitDemoApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.agilebits.YubiKitDemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "YubiKitDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

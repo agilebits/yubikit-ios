@@ -23,7 +23,7 @@
 @interface YubiKitManager()
 
 @property (nonatomic, readwrite) id<YKFNFCSessionProtocol> nfcSession NS_AVAILABLE_IOS(11.0);
-//@property (nonatomic, readwrite) id<YKFQRReaderSessionProtocol> qrReaderSession;
+@property (nonatomic, readwrite) id<YKFQRReaderSessionProtocol> qrReaderSession;
 @property (nonatomic, readwrite) id<YKFAccessorySessionProtocol> accessorySession;
 
 @end

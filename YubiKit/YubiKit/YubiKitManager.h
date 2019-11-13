@@ -41,7 +41,7 @@
  @abstract
     Returns the shared instance of YKFQRReaderSession to interact with the QR Code reader.
  */
-//@property (nonatomic, readonly, nonnull) id<YKFQRReaderSessionProtocol> qrReaderSession;
+@property (nonatomic, readonly, nonnull) id<YKFQRReaderSessionProtocol> qrReaderSession;
 
 /*!
  @property accessorySession
