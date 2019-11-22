@@ -48,25 +48,24 @@
 }
 
 + (BOOL)supportsNFCScanning {
-	return NO;
-//#ifdef DEBUG
-//    // When this is set by UTs.
-//    if (self.fakeDeviceCapabilities) {
-//        return [[self.fakeDeviceCapabilities class] supportsNFCScanning];
-//    }
-//#endif
-//
-//    if (self.currentUIDevice.ykf_deviceModel == YKFDeviceModelSimulator) {
-//        return NO;
-//    }
-//    if (@available(iOS 11, *)) {
-//        // This check was introduced to avoid some random crashers caused by CoreNFC on devices which are not NFC enabled.
-//        if ([self deviceIsNFCEnabled]) {
-//            return NFCNDEFReaderSession.readingAvailable;
-//        }
-//        return NO;
-//    }
-//    return NO;
+#ifdef DEBUG
+    // When this is set by UTs.
+    if (self.fakeDeviceCapabilities) {
+        return [[self.fakeDeviceCapabilities class] supportsNFCScanning];
+    }
+#endif
+
+    if (self.currentUIDevice.ykf_deviceModel == YKFDeviceModelSimulator) {
+        return NO;
+    }
+    if (@available(iOS 11, *)) {
+        // This check was introduced to avoid some random crashers caused by CoreNFC on devices which are not NFC enabled.
+        if ([self deviceIsNFCEnabled]) {
+            return NFCNDEFReaderSession.readingAvailable;
+        }
+        return NO;
+    }
+    return NO;
 }
 
 + (BOOL)supportsISO7816NFCTags {
