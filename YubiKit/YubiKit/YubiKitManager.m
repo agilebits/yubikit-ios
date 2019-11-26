@@ -46,7 +46,7 @@ static id<YubiKitManagerProtocol> sharedInstance;
         if (@available(iOS 11, *)) {
             self.nfcSession = [[YKFNFCSession alloc] init];
         }
-        //self.qrReaderSession = [[YKFQRReaderSession alloc] init];
+        self.qrReaderSession = [[YKFQRReaderSession alloc] init];
         
         YKFAccessorySessionConfiguration *configuration = [[YKFAccessorySessionConfiguration alloc] init];
         EAAccessoryManager *accessoryManager = [EAAccessoryManager sharedAccessoryManager];
