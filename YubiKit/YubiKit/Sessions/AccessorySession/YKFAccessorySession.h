@@ -52,19 +52,6 @@ typedef NS_ENUM(NSUInteger, YKFAccessorySessionState) {
 
 /**
  * ---------------------------------------------------------------------------------------------------------------------
- * @name YFKeySessionApplication Protocol
- * ---------------------------------------------------------------------------------------------------------------------
- */
-@protocol YFKeySessionApplication <NSObject>
-
-- (UIBackgroundTaskIdentifier)beginBackgroundTaskWithName:(nullable NSString *)taskName expirationHandler:(void(^ __nullable)(void))handler;
-- (void)endBackgroundTask:(UIBackgroundTaskIdentifier)identifier;
-- (UIApplicationState)applicationState;
-
-@end
-
-/**
- * ---------------------------------------------------------------------------------------------------------------------
  * @name YKFAccessorySessionProtocol
  * ---------------------------------------------------------------------------------------------------------------------
  */
@@ -73,15 +60,6 @@ typedef NS_ENUM(NSUInteger, YKFAccessorySessionState) {
  Defines the interface for YKFAccessorySession.
  */
 @protocol YKFAccessorySessionProtocol<NSObject>
-
-/*!
- @property application
-
- @abstract
- This property allows the caller to set the application instance, making this safer for use in code that has to be extension API-only safe.
-
- */
-@property (nonatomic, strong) id<YFKeySessionApplication> application;
 
 /*!
  @property sessionState

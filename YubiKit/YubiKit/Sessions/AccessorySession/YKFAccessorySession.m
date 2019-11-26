@@ -393,8 +393,9 @@ static NSTimeInterval const YubiAccessorySessionStreamOpenDelay = 0.2; // second
         return;
     }
 
-    __block UIBackgroundTaskIdentifier bgTask = [self.application beginBackgroundTaskWithName:@"CloseSessionTask" expirationHandler:^{
-        [self.application endBackgroundTask:bgTask];
+    UIApplication *application = [UIApplication sharedApplication];
+	__block UIBackgroundTaskIdentifier bgTask = [application beginBackgroundTaskWithName:@"CloseSessionTask" expirationHandler:^{
+        [application endBackgroundTask:bgTask];
         bgTask = UIBackgroundTaskInvalid;
         YKFLogVerbose(@"Background task expired.");
     }];
@@ -406,7 +407,7 @@ static NSTimeInterval const YubiAccessorySessionStreamOpenDelay = 0.2; // second
     
     // Dispatch a subsequent operation which will wait for closing.
     dispatch_async(self.sharedDispatchQueue, ^{
-        [self.application endBackgroundTask:bgTask];
+        [application endBackgroundTask:bgTask];
         bgTask = UIBackgroundTaskInvalid;
         YKFLogVerbose(@"Background task ended.");
     });
@@ -510,7 +511,7 @@ static NSTimeInterval const YubiAccessorySessionStreamOpenDelay = 0.2; // second
     
     __block UIApplicationState applicationState = UIApplicationStateActive;
     ykf_dispatch_block_sync_main(^{
-        applicationState = self.application.applicationState;
+        applicationState = [UIApplication sharedApplication].applicationState;
     });
     
     // If the connection was lost in inactive or backgroud states -> mark it for reconnecting again when the application becomes active.
@@ -534,7 +535,5 @@ static NSTimeInterval const YubiAccessorySessionStreamOpenDelay = 0.2; // second
     YKFParameterAssertReturnValue(accessory, NO);
     return [self.configuration allowsAccessory:accessory];
 }
-
-@synthesize application;
 
 @end
