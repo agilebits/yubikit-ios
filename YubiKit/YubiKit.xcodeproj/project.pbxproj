@@ -10,6 +10,9 @@
 		816C684B2343126100209342 /* YKFNFCTagDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 816C684A2343126100209342 /* YKFNFCTagDescription.m */; };
 		816C684E23431BE600209342 /* YKFNFCTagDescription.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 816C68492343126100209342 /* YKFNFCTagDescription.h */; };
 		93447E76238D7C130091F82C /* YKFQRReaderSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 95885B0720A07ED800828D02 /* YKFQRReaderSession.m */; };
+		93447E77238D806F0091F82C /* YKFQRCodeScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 956DB67120639C7D006B1738 /* YKFQRCodeScanViewController.m */; };
+		93447E79238D813D0091F82C /* YKFQRCodeScanOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 956DB66E20639C2B006B1738 /* YKFQRCodeScanOverlayView.m */; };
+		93447E7B238D81570091F82C /* YKFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C2963C2062634C0091318B /* YKFViewController.m */; };
 		93723B77237B53D000F1ACF6 /* YubiKitLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 95233E542330DEDF00C51F92 /* YubiKitLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93B098AC22C5948300522BDB /* YKFWebAuthnClientData.h in Headers */ = {isa = PBXBuildFile; fileRef = 956991F222C224BC00C5EB02 /* YKFWebAuthnClientData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93B098AD22C5948300522BDB /* YKFKeyAPDUError.h in Headers */ = {isa = PBXBuildFile; fileRef = 9551882E2265F4EE001A4191 /* YKFKeyAPDUError.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1668,6 +1671,7 @@
 				93B0990222C594A400522BDB /* YKFKeyFIDO2ClientPinRequest.m in Sources */,
 				93B0993122C594A400522BDB /* YKFKeyFIDO2GetAssertionRequest.m in Sources */,
 				93B0994322C594A400522BDB /* YKFNSDataAdditions.m in Sources */,
+				93447E79238D813D0091F82C /* YKFQRCodeScanOverlayView.m in Sources */,
 				93B0992222C594A400522BDB /* YKFOTPTextParser.m in Sources */,
 				93B0994F22C594A400522BDB /* YKFKeyOATHListRequest.m in Sources */,
 				93B098F022C594A400522BDB /* MF_Base32Additions.m in Sources */,
@@ -1727,6 +1731,7 @@
 				93B0994122C594A400522BDB /* YKFFIDO2MakeCredentialAPDU.m in Sources */,
 				93B0991E22C594A400522BDB /* YKFKeyService.m in Sources */,
 				93B0990E22C594A400522BDB /* YKFOATHSetCodeAPDU.m in Sources */,
+				93447E7B238D81570091F82C /* YKFViewController.m in Sources */,
 				93B0994222C594A400522BDB /* YKFKeyOATHCalculateResponse.m in Sources */,
 				93B098FA22C594A400522BDB /* YKFKeyFIDO2GetAssertionResponse.m in Sources */,
 				93B0992822C594A400522BDB /* YKFKeyFIDO2MakeCredentialResponse.m in Sources */,
@@ -1749,6 +1754,7 @@
 				93B0991C22C594A400522BDB /* YKFCBORType.m in Sources */,
 				93B098E822C594A400522BDB /* YKFPCSCErrorMap.m in Sources */,
 				93B0990922C594A400522BDB /* YKFKeyU2FSignResponse.m in Sources */,
+				93447E77238D806F0091F82C /* YKFQRCodeScanViewController.m in Sources */,
 				93B098F922C594A400522BDB /* YKFSelectOATHApplicationAPDU.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
