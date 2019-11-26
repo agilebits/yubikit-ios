@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		816C684B2343126100209342 /* YKFNFCTagDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 816C684A2343126100209342 /* YKFNFCTagDescription.m */; };
 		816C684E23431BE600209342 /* YKFNFCTagDescription.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 816C68492343126100209342 /* YKFNFCTagDescription.h */; };
+		93447E76238D7C130091F82C /* YKFQRReaderSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 95885B0720A07ED800828D02 /* YKFQRReaderSession.m */; };
 		93723B77237B53D000F1ACF6 /* YubiKitLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 95233E542330DEDF00C51F92 /* YubiKitLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93B098AC22C5948300522BDB /* YKFWebAuthnClientData.h in Headers */ = {isa = PBXBuildFile; fileRef = 956991F222C224BC00C5EB02 /* YKFWebAuthnClientData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93B098AD22C5948300522BDB /* YKFKeyAPDUError.h in Headers */ = {isa = PBXBuildFile; fileRef = 9551882E2265F4EE001A4191 /* YKFKeyAPDUError.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1701,6 +1702,7 @@
 				93B0992422C594A400522BDB /* YKFPCSC.m in Sources */,
 				93B0991222C594A400522BDB /* YKFPermissions.m in Sources */,
 				93B0990322C594A400522BDB /* YKFLogger.m in Sources */,
+				93447E76238D7C130091F82C /* YKFQRReaderSession.m in Sources */,
 				93B098F822C594A400522BDB /* YKFKeyAPDUError.m in Sources */,
 				93B0990722C594A400522BDB /* YKFCBORDecoder.m in Sources */,
 				93B0992722C594A400522BDB /* YKFKeyOATHCalculateAllRequest.m in Sources */,
