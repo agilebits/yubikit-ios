@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		811F91F023848D5E002158ED /* YKFKeyOATHCalculateAllRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 95A4566F21777D0E00AD5A94 /* YKFKeyOATHCalculateAllRequest.h */; };
 		816C684B2343126100209342 /* YKFNFCTagDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 816C684A2343126100209342 /* YKFNFCTagDescription.m */; };
 		816C684E23431BE600209342 /* YKFNFCTagDescription.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 816C68492343126100209342 /* YKFNFCTagDescription.h */; };
 		93447E76238D7C130091F82C /* YKFQRReaderSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 95885B0720A07ED800828D02 /* YKFQRReaderSession.m */; };
 		93447E77238D806F0091F82C /* YKFQRCodeScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 956DB67120639C7D006B1738 /* YKFQRCodeScanViewController.m */; };
 		93447E79238D813D0091F82C /* YKFQRCodeScanOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 956DB66E20639C2B006B1738 /* YKFQRCodeScanOverlayView.m */; };
 		93447E7B238D81570091F82C /* YKFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C2963C2062634C0091318B /* YKFViewController.m */; };
+		93447EC1238EAA010091F82C /* YKFKeyOATHCalculateAllRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 95A4566F21777D0E00AD5A94 /* YKFKeyOATHCalculateAllRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93723B77237B53D000F1ACF6 /* YubiKitLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 95233E542330DEDF00C51F92 /* YubiKitLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93B098AC22C5948300522BDB /* YKFWebAuthnClientData.h in Headers */ = {isa = PBXBuildFile; fileRef = 956991F222C224BC00C5EB02 /* YKFWebAuthnClientData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93B098AD22C5948300522BDB /* YKFKeyAPDUError.h in Headers */ = {isa = PBXBuildFile; fileRef = 9551882E2265F4EE001A4191 /* YKFKeyAPDUError.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -406,6 +408,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				811F91F023848D5E002158ED /* YKFKeyOATHCalculateAllRequest.h in CopyFiles */,
 				816C684E23431BE600209342 /* YKFNFCTagDescription.h in CopyFiles */,
 				95294B46231527F50014C30B /* YKFNFCSession.h in CopyFiles */,
 				95233E562330DEF200C51F92 /* YubiKitLogger.h in CopyFiles */,
@@ -471,9 +474,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		811F91EF2383C57B002158ED /* Changelog.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = Changelog.md; path = ../Changelog.md; sourceTree = "<group>"; };
 		816C68492343126100209342 /* YKFNFCTagDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YKFNFCTagDescription.h; sourceTree = "<group>"; };
 		816C684A2343126100209342 /* YKFNFCTagDescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKFNFCTagDescription.m; sourceTree = "<group>"; };
 		816C684C234315CC00209342 /* YKFNFCTagDescription+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YKFNFCTagDescription+Private.h"; sourceTree = "<group>"; };
+		81DF8FD9237B531700737268 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		81DF8FDA237B534D00737268 /* docs */ = {isa = PBXFileReference; lastKnownFileType = folder; name = docs; path = ../docs; sourceTree = "<group>"; };
 		93B098A422C592D200522BDB /* YubiKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YubiKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B098A622C592D200522BDB /* YubiKitFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YubiKitFramework.h; sourceTree = "<group>"; };
 		93B098A722C592D200522BDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1228,6 +1234,9 @@
 		95C29608206247210091318B = {
 			isa = PBXGroup;
 			children = (
+				811F91EF2383C57B002158ED /* Changelog.md */,
+				81DF8FDA237B534D00737268 /* docs */,
+				81DF8FD9237B531700737268 /* README.md */,
 				956DB683206402AA006B1738 /* build.sh */,
 				95C29613206247210091318B /* YubiKit */,
 				95885B2620A3187700828D02 /* YubiKitTests */,
@@ -1489,6 +1498,7 @@
 				93B098D622C5948300522BDB /* YKFKeyU2FRequest.h in Headers */,
 				93B098B422C5948300522BDB /* YKFKeyFIDO2VerifyPinRequest.h in Headers */,
 				93B098C722C5948300522BDB /* YKFKeyOATHCalculateResponse.h in Headers */,
+				93447EC1238EAA010091F82C /* YKFKeyOATHCalculateAllRequest.h in Headers */,
 				93B098D022C5948300522BDB /* YKFKeyU2FService.h in Headers */,
 				93B098CD22C5948300522BDB /* YKFKeyService.h in Headers */,
 				93B098BB22C5948300522BDB /* YKFKeyFIDO2Request.h in Headers */,

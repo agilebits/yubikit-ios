@@ -12,45 +12,47 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YubiKitManager.h"
-#import "YubiKitLogger.h"
-#import "YubiKitConfiguration.h"
-#import "YubiKitExternalLocalization.h"
-#import "YubiKitDeviceCapabilities.h"
+#import <YubiKit/YubiKitManager.h>
+#import <YubiKit/YubiKitLogger.h>
+#import <YubiKit/YubiKitConfiguration.h>
+#import <YubiKit/YubiKitExternalLocalization.h>
+#import <YubiKit/YubiKitDeviceCapabilities.h>
 
-#import "YKFOTPTextParserProtocol.h"
-#import "YKFOTPURIParserProtocol.h"
-#import "YKFOTPToken.h"
+#import <YubiKit/YKFOTPTextParserProtocol.h>
+#import <YubiKit/YKFOTPURIParserProtocol.h>
+#import <YubiKit/YKFOTPToken.h>
 
-#import "YKFQRReaderSession.h"
-#import "YKFQRCodeScanError.h"
-#import "YKFNFCSession.h"
-#import "YKFNFCOTPService.h"
-#import "YKFNFCError.h"
-#import "YKFNFCTagDescription.h"
+#import <YubiKit/YKFQRReaderSession.h>
+#import <YubiKit/YKFQRCodeScanError.h>
+#import <YubiKit/YKFNFCSession.h>
+#import <YubiKit/YKFNFCOTPService.h>
+#import <YubiKit/YKFNFCError.h>
+#import <YubiKit/YKFNFCTagDescription.h>
 
-#import "YKFAccessorySession.h"
-#import "YKFAccessoryDescription.h"
+#import <YubiKit/YKFAccessorySession.h>
+#import <YubiKit/YKFAccessoryDescription.h>
 
-#import "YKFKeySessionError.h"
-#import "YKFKeyFIDO2Error.h"
-#import "YKFKeyU2FError.h"
-#import "YKFKeyOATHError.h"
-#import "YKFKeyAPDUError.h"
+#import <YubiKit/YKFKeySessionError.h>
+#import <YubiKit/YKFKeyFIDO2Error.h>
+#import <YubiKit/YKFKeyU2FError.h>
+#import <YubiKit/YKFKeyOATHError.h>
+#import <YubiKit/YKFKeyAPDUError.h>
 
-#import "YKFKeyU2FService.h"
-#import "YKFKeyFIDO2Service.h"
-#import "YKFKeyOATHService.h"
-#import "YKFKeyRawCommandService.h"
+#import <YubiKit/YKFKeyU2FService.h>
+#import <YubiKit/YKFKeyFIDO2Service.h>
+#import <YubiKit/YKFKeyOATHService.h>
+#import <YubiKit/YKFKeyRawCommandService.h>
 
-#import "YKFKeyFIDO2Request.h"
-#import "YKFKeyFIDO2MakeCredentialRequest.h"
-#import "YKFKeyFIDO2GetAssertionRequest.h"
-#import "YKFKeyFIDO2VerifyPinRequest.h"
-#import "YKFKeyFIDO2SetPinRequest.h"
-#import "YKFKeyFIDO2ChangePinRequest.h"
+#import <YubiKit/YKFKeyFIDO2Request.h>
+#import <YubiKit/YKFKeyFIDO2MakeCredentialRequest.h>
+#import <YubiKit/YKFKeyFIDO2GetAssertionRequest.h>
+#import <YubiKit/YKFKeyFIDO2VerifyPinRequest.h>
+#import <YubiKit/YKFKeyFIDO2SetPinRequest.h>
+#import <YubiKit/YKFKeyFIDO2ChangePinRequest.h>
 
-#import "YKFPCSC.h"
+#import <YubiKit/YKFPCSC.h>
 
-#import "YKFNSDataAdditions.h"
-#import "YKFWebAuthnClientData.h"
+#import <YubiKit/YKFNSDataAdditions.h>
+#import <YubiKit/YKFWebAuthnClientData.h>
+
+#import <YubiKit/YKFKeyOATHCalculateAllRequest.h>
