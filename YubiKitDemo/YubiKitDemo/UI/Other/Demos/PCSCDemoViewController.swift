@@ -20,7 +20,7 @@ import UIKit
  
  Notes:
     1. The key should be connected to the device before executing this demo.
-    2. Dispatch async on a backgroud queue to not lock the calling thread (if main).
+    2. Dispatch async on a background queue to not lock the calling thread (if main).
     3. This code requires a certificate to be added to the key on slot 9c:
         - The certificate to test with is provided in docassets/cert.der
         - Run: yubico-piv-tool -s9c -icert.der -KDER -averify -aimport-cert
@@ -414,8 +414,8 @@ class PCSCDemoViewController: OtherDemoRootViewController {
     
     // MARK: - Session State Updates
     
-    override func keySessionStateDidChange() {
-        let sessionState = YubiKitManager.shared.keySession.sessionState        
+    override func accessorySessionStateDidChange() {
+        let sessionState = YubiKitManager.shared.accessorySession.sessionState        
         if sessionState == .closed {
             logTextView.text = nil
             setDemoButton(enabled: true)
