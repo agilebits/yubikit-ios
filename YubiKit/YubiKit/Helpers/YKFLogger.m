@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFLogger.h"
-#import "YubiKitLogger.h"
+#import <YubiKit/YKFLogger.h>
+#import <YubiKit/YubiKitLogger.h>
 
 // Prefix for showing Info logs.
 static NSString* const YKFLogPrefixInfo = @"►►[I]► YubiKit:";

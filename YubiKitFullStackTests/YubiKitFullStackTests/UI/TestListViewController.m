@@ -7,8 +7,8 @@
 //
 
 #import <YubiKit/YubiKit.h>
-#import "TestListViewController.h"
-#import "ManualTests.h"
+#import "TestListViewController.h>
+#import "ManualTests.h>
 
 @interface TestListViewController()<UITableViewDelegate>
 

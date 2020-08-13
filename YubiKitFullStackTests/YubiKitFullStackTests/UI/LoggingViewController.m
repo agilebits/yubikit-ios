@@ -8,10 +8,10 @@
 
 #import <YubiKit/YubiKit.h>
 
-#import "LoggingViewController.h"
-#import "TestSharedLogger.h"
-#import "Configuration.h"
-#import "OTPUIResponder.h"
+#import "LoggingViewController.h>
+#import "TestSharedLogger.h>
+#import "Configuration.h>
+#import "OTPUIResponder.h>
 
 @interface LoggingViewController()<OTPUIResponderDelegate>
 

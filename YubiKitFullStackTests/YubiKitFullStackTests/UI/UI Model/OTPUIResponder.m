@@ -6,7 +6,7 @@
 //  Copyright © 2018 Yubico. All rights reserved.
 //
 
-#import "OTPUIResponder.h"
+#import "OTPUIResponder.h>
 
 @interface OTPUIResponder()
 

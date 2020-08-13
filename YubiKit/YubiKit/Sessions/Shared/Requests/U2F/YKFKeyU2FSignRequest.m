@@ -12,10 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKeyU2FSignRequest.h"
-#import "YKFU2FSignAPDU.h"
-#import "YKFAssert.h"
-#import "YKFKeyU2FRequest+Private.h"
+#import <YubiKit/YKFKeyU2FSignRequest.h>
+#import <YubiKit/YKFU2FSignAPDU.h>
+#import <YubiKit/YKFAssert.h>
+#import <YubiKit/YKFKeyU2FRequest+Private.h>
 
 /*
  DOMString typ as defined in FIDO U2F Raw Message Format

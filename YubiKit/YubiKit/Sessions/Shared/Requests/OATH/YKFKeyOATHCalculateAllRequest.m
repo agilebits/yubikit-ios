@@ -12,10 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKeyOATHCalculateAllRequest.h"
-#import "YKFKeyOATHCalculateAllRequest+Private.h"
-#import "YKFOATHCalculateAllAPDU.h"
-#import "YKFKeyOATHRequest+Private.h"
+#import <YubiKit/YKFKeyOATHCalculateAllRequest.h>
+#import <YubiKit/YKFKeyOATHCalculateAllRequest+Private.h>
+#import <YubiKit/YKFOATHCalculateAllAPDU.h>
+#import <YubiKit/YKFKeyOATHRequest+Private.h>
 
 @implementation YKFKeyOATHCalculateAllRequest
 

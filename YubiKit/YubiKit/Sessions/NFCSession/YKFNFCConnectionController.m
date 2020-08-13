@@ -12,12 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFNFCConnectionController.h"
-#import "YKFNSMutableDataAdditions.h"
-#import "YKFBlockMacros.h"
-#import "YKFLogger.h"
-#import "YKFAssert.h"
-#import "YKFAPDU+Private.h"
+#import <YubiKit/YKFNFCConnectionController.h>
+#import <YubiKit/YKFNSMutableDataAdditions.h>
+#import <YubiKit/YKFBlockMacros.h>
+#import <YubiKit/YKFLogger.h>
+#import <YubiKit/YKFAssert.h>
+#import <YubiKit/YKFKeySessionError.h>
+#import <YubiKit/YKFKeySessionError+Private.h>
+#import <YubiKit/YKFNSDataAdditions+Private.h>
+#import <YubiKit/YKFAPDU+Private.h>
 
 typedef void (^YKFKeyConnectionControllerCommunicationQueueBlock)(NSOperation *operation);
 
@@ -54,7 +57,7 @@ typedef void (^YKFKeyConnectionControllerCommunicationQueueBlock)(NSOperation *o
     YKFParameterAssertReturn(completion);
     
     YKFLogVerbose(@"NFCConnectionController - Execute command...");
-    
+
     ykf_weak_self();
     [self dispatchBlockOnCommunicationQueue:^(NSOperation *operation) {
         ykf_safe_strong_self();
@@ -66,6 +69,7 @@ typedef void (^YKFKeyConnectionControllerCommunicationQueueBlock)(NSOperation *o
         
         // Check availability before executing. If the command is queued, the tag may become unavailable at execution time.
         if (!strongSelf.tag.isAvailable) {
+            completion(nil, [YKFKeySessionError errorWithCode:YKFKeySessionErrorConnectionLost], 0);
             return;
         }
                 
@@ -76,7 +80,8 @@ typedef void (^YKFKeyConnectionControllerCommunicationQueueBlock)(NSOperation *o
         __block NSData *executionResult = nil;
         NSDate *commandStartDate = [NSDate date];
         dispatch_semaphore_t executionSemaphore = dispatch_semaphore_create(0);
-        
+        YKFLogVerbose(@"Sent(NFC): %@", [command.apduData ykf_hexadecimalString]);
+
         [strongSelf.tag sendCommandAPDU:cnApdu completionHandler:^(NSData *responseData, uint8_t sw1, uint8_t sw2, NSError *error) {
             if (error) {
                 executionError = error;
@@ -84,11 +89,14 @@ typedef void (^YKFKeyConnectionControllerCommunicationQueueBlock)(NSOperation *o
                 return;
             }
             
+
             NSMutableData *fullResponse = [[NSMutableData alloc] initWithData:responseData];
             [fullResponse ykf_appendByte:sw1];
             [fullResponse ykf_appendByte:sw2];
             executionResult = [fullResponse copy];
-            
+
+            YKFLogVerbose(@"Received(NFC): %@", [executionResult ykf_hexadecimalString]);
+
             dispatch_semaphore_signal(executionSemaphore);
         }];
         

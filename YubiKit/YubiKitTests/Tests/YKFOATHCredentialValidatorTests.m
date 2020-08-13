@@ -14,10 +14,10 @@
 
 #import <XCTest/XCTest.h>
 
-#import "YKFTestCase.h"
-#import "YKFOATHCredential.h"
-#import "YKFOATHCredentialValidator.h"
-#import "YKFKeyOATHError.h"
+#import <YubiKit/YKFTestCase.h>
+#import <YubiKit/YKFOATHCredential.h>
+#import <YubiKit/YKFOATHCredentialValidator.h>
+#import <YubiKit/YKFKeyOATHError.h>
 
 static NSString* const YKFOATHCredentialValidatorTestsVeryLargeSecret = @"HXDMVJECJJWSRB3HWIZR4IFUGFTMXBOZHXDMVJECJJWSRB3HWIZR4IFUGFTMXBOZHXDMVJECJJWSRB3HWIZR4IFUGFTMXBOZHXDMVJECJJWSRB3HWIZR4IFUGFTMXBOZHXDMVJECJJWSRB3HWIZR4IFUGFTMXBOZHXDMVJECJJWSRB3HWIZR4IFUGFTMXBOZ";
 

@@ -14,11 +14,11 @@
 
 #import <Security/Security.h>
 
-#import "YKFFIDO2PinAuthKey.h"
-#import "YKFCBOREncoder.h"
-#import "YKFCBORDecoder.h"
-#import "YKFBlockMacros.h"
-#import "YKFAssert.h"
+#import <YubiKit/YKFFIDO2PinAuthKey.h>
+#import <YubiKit/YKFCBOREncoder.h>
+#import <YubiKit/YKFCBORDecoder.h>
+#import <YubiKit/YKFBlockMacros.h>
+#import <YubiKit/YKFAssert.h>
 
 /// The key type label.
 static const NSInteger YKFFIDO2PinAuthKeyCoseLabelKty = 1;

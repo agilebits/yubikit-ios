@@ -56,3 +56,19 @@
 #import <YubiKit/YKFWebAuthnClientData.h>
 
 #import <YubiKit/YKFKeyOATHCalculateAllRequest.h>
+#import <YubiKit/YKFKeyOATHCalculateAllRequest.h>
+#import <YubiKit/YKFKeyOATHCalculateAllResponse.h>
+#import <YubiKit/YKFKeyOATHCalculateAllResponse.h>
+#import <YubiKit/YKFKeyOATHCalculateRequest.h>
+#import <YubiKit/YKFKeyOATHCalculateResponse.h>
+#import <YubiKit/YKFKeyOATHDeleteRequest.h>
+#import <YubiKit/YKFKeyOATHListRequest.h>
+#import <YubiKit/YKFKeyOATHListResponse.h>
+#import <YubiKit/YKFKeyOATHPutRequest.h>
+#import <YubiKit/YKFKeyOATHRenameRequest.h>
+#import <YubiKit/YKFKeyOATHResetRequest.h>
+#import <YubiKit/YKFKeyOATHSelectApplicationResponse.h>
+#import <YubiKit/YKFKeyOATHSelectApplicationResponse.h>
+#import <YubiKit/YKFKeyOATHSetCodeRequest.h>
+#import <YubiKit/YKFKeyOATHValidateRequest.h>
+#import <YubiKit/YKFKeyOATHValidateResponse.h>

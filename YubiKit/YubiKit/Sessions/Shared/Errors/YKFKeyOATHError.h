@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKeySessionError.h"
+#import <YubiKit/YKFKeySessionError.h>
 
 typedef NS_ENUM(NSUInteger, YKFKeyOATHErrorCode) {
     
@@ -56,7 +56,12 @@ typedef NS_ENUM(NSUInteger, YKFKeyOATHErrorCode) {
     
     /*! Wrong password used for authentication.
      */
-    YKFKeyOATHErrorCodeWrongPassword = 0x000109
+    YKFKeyOATHErrorCodeWrongPassword = 0x000109,
+
+    /*! Object was not found in list of credentials
+     */
+    YKFKeyOATHErrorCodeNoSuchObject = 0x00010A
+
 };
 
 

@@ -9,8 +9,8 @@
 #import <XCTest/XCTest.h>
 #import <YubiKit/YubiKit.h>
 
-#import "TestSharedLogger.h"
-#import "AutomationTest.h"
+#import "TestSharedLogger.h>
+#import "AutomationTest.h>
 
 static const int KeyConnectionAutomationTestsReplugIterations = 5;
 static const int KeyConnectionAutomationTestsReconnectIterations = 10;

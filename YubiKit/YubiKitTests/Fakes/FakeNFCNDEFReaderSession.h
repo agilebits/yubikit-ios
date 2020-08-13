@@ -14,7 +14,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreNFC/CoreNFC.h>
-#import "NFCNDEFReaderSession+Testing.h"
+#import "NFCNDEFReaderSession+Testing.h>
 
 @interface FakeNFCNDEFReaderSession : NSObject<YKFNFCNDEFReaderSessionProtocol>
 

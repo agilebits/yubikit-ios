@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKeyFIDO2VerifyPinRequest.h"
-#import "YKFAssert.h"
+#import <YubiKit/YKFKeyFIDO2VerifyPinRequest.h>
+#import <YubiKit/YKFAssert.h>
 
 @interface YKFKeyFIDO2VerifyPinRequest()
 

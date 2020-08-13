@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TestListViewController.h"
+#import "TestListViewController.h>
 
 @interface GnubbyManualTestsViewController : TestListViewController
 @end

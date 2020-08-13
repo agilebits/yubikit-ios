@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKeyFIDO2GetAssertionRequest.h"
-#import "YKFKeyFIDO2GetAssertionRequest+Private.h"
+#import <YubiKit/YKFKeyFIDO2GetAssertionRequest.h>
+#import <YubiKit/YKFKeyFIDO2GetAssertionRequest+Private.h>
 
 NSString* const YKFKeyFIDO2GetAssertionRequestOptionUP = @"up";
 NSString* const YKFKeyFIDO2GetAssertionRequestOptionUV = @"uv";

@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFCBORDecoder.h"
-#import "YKFCBORTag.h"
-#import "YKFAssert.h"
+#import <YubiKit/YKFCBORDecoder.h>
+#import <YubiKit/YKFCBORTag.h>
+#import <YubiKit/YKFAssert.h>
 
 @interface NSInputStream(YKFCBORDecoder)
 

@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKeyOATHRequest.h"
-#import "YKFKeyOATHRequest+Private.h"
+#import <YubiKit/YKFKeyOATHRequest.h>
+#import <YubiKit/YKFKeyOATHRequest+Private.h>
 
 @implementation YKFKeyOATHRequest
 @end

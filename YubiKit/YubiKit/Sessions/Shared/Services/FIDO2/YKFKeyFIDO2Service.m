@@ -12,42 +12,42 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKeyFIDO2Service.h"
-#import "YKFKeyFIDO2Service+Private.h"
-#import "YKFAccessoryConnectionController.h"
-#import "YKFKeyFIDO2Error.h"
-#import "YKFKeyAPDUError.h"
-#import "YKFKeyCommandConfiguration.h"
-#import "YKFLogger.h"
-#import "YKFBlockMacros.h"
-#import "YKFNSDataAdditions.h"
-#import "YKFAssert.h"
+#import <YubiKit/YKFKeyFIDO2Service.h>
+#import <YubiKit/YKFKeyFIDO2Service+Private.h>
+#import <YubiKit/YKFAccessoryConnectionController.h>
+#import <YubiKit/YKFKeyFIDO2Error.h>
+#import <YubiKit/YKFKeyAPDUError.h>
+#import <YubiKit/YKFKeyCommandConfiguration.h>
+#import <YubiKit/YKFLogger.h>
+#import <YubiKit/YKFBlockMacros.h>
+#import <YubiKit/YKFNSDataAdditions.h>
+#import <YubiKit/YKFAssert.h>
 
-#import "YKFFIDO2PinAuthKey.h"
-#import "YKFKeyFIDO2ClientPinRequest.h"
-#import "YKFKeyFIDO2ClientPinResponse.h"
+#import <YubiKit/YKFFIDO2PinAuthKey.h>
+#import <YubiKit/YKFKeyFIDO2ClientPinRequest.h>
+#import <YubiKit/YKFKeyFIDO2ClientPinResponse.h>
 
-#import "YKFSelectFIDO2ApplicationAPDU.h"
-#import "YKFFIDO2MakeCredentialAPDU.h"
-#import "YKFFIDO2GetAssertionAPDU.h"
-#import "YKFFIDO2GetNextAssertionAPDU.h"
-#import "YKFFIDO2TouchPoolingAPDU.h"
-#import "YKFFIDO2ClientPinAPDU.h"
-#import "YKFFIDO2GetInfoAPDU.h"
-#import "YKFFIDO2ResetAPDU.h"
+#import <YubiKit/YKFSelectFIDO2ApplicationAPDU.h>
+#import <YubiKit/YKFFIDO2MakeCredentialAPDU.h>
+#import <YubiKit/YKFFIDO2GetAssertionAPDU.h>
+#import <YubiKit/YKFFIDO2GetNextAssertionAPDU.h>
+#import <YubiKit/YKFFIDO2TouchPoolingAPDU.h>
+#import <YubiKit/YKFFIDO2ClientPinAPDU.h>
+#import <YubiKit/YKFFIDO2GetInfoAPDU.h>
+#import <YubiKit/YKFFIDO2ResetAPDU.h>
 
-#import "YKFKeyFIDO2GetInfoResponse+Private.h"
-#import "YKFKeyFIDO2MakeCredentialResponse+Private.h"
-#import "YKFKeyFIDO2GetAssertionResponse+Private.h"
+#import <YubiKit/YKFKeyFIDO2GetInfoResponse+Private.h>
+#import <YubiKit/YKFKeyFIDO2MakeCredentialResponse+Private.h>
+#import <YubiKit/YKFKeyFIDO2GetAssertionResponse+Private.h>
 
-#import "YKFKeyFIDO2MakeCredentialRequest+Private.h"
-#import "YKFKeyFIDO2GetAssertionRequest+Private.h"
+#import <YubiKit/YKFKeyFIDO2MakeCredentialRequest+Private.h>
+#import <YubiKit/YKFKeyFIDO2GetAssertionRequest+Private.h>
 
-#import "YKFNSDataAdditions+Private.h"
-#import "YKFKeySessionError+Private.h"
-#import "YKFKeyService+Private.h"
-#import "YKFKeyFIDO2Request+Private.h"
-#import "YKFAPDU+Private.h"
+#import <YubiKit/YKFNSDataAdditions+Private.h>
+#import <YubiKit/YKFKeySessionError+Private.h>
+#import <YubiKit/YKFKeyService+Private.h>
+#import <YubiKit/YKFKeyFIDO2Request+Private.h>
+#import <YubiKit/YKFAPDU+Private.h>
 
 #pragma mark - Private Response Blocks
 
@@ -542,7 +542,7 @@ typedef void (^YKFKeyFIDO2ServiceClientPinSharedSecretCompletionBlock)
         if (error) {
             returnedError = error;
         } else {
-            int statusCode = [strongSelf statusCodeFromKeyResponse: result];
+            int statusCode = [YKFKeyService statusCodeFromKeyResponse: result];
             switch (statusCode) {
                 case YKFKeyAPDUErrorCodeNoError:
                     break;
@@ -603,7 +603,7 @@ typedef void (^YKFKeyFIDO2ServiceClientPinSharedSecretCompletionBlock)
             return;
         }
         
-        UInt16 statusCode = [strongSelf statusCodeFromKeyResponse: result];
+        UInt16 statusCode = [YKFKeyService statusCodeFromKeyResponse: result];
         
         switch (statusCode) {
             case YKFKeyAPDUErrorCodeNoError: {
@@ -649,7 +649,7 @@ typedef void (^YKFKeyFIDO2ServiceClientPinSharedSecretCompletionBlock)
 #pragma mark - Helpers
 
 - (UInt8)errorCodeFromKeyResponsePayloadData:(NSData *)response {
-    NSData *responsePayload = [self dataFromKeyResponse:response];
+    NSData *responsePayload = [YKFKeyService dataFromKeyResponse:response];
     YKFAssertReturnValue(responsePayload.length >= 1, @"Cannot extract FIDO2 error code from the key response.", YKFKeyFIDO2ErrorCodeOTHER);
     
     UInt8 *payloadBytes = (UInt8 *)responsePayload.bytes;
@@ -657,7 +657,7 @@ typedef void (^YKFKeyFIDO2ServiceClientPinSharedSecretCompletionBlock)
 }
 
 - (NSData *)cborFromKeyResponsePayloadData:(NSData *)response {
-    NSData *responsePayload = [self dataFromKeyResponse:response];
+    NSData *responsePayload = [YKFKeyService dataFromKeyResponse:response];
     YKFAssertReturnValue(responsePayload.length >= 1, @"Cannot extract FIDO2 cbor from the key response.", nil);
     
     // discard the error byte

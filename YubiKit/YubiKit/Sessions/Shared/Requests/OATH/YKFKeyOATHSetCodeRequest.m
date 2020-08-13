@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKeyOATHSetCodeRequest.h"
-#import "YKFAssert.h"
+#import <YubiKit/YKFKeyOATHSetCodeRequest.h>
+#import <YubiKit/YKFAssert.h>
 
 @interface YKFKeyOATHSetCodeRequest()
 

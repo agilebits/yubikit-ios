@@ -13,8 +13,8 @@
 // limitations under the License.
 
 #import <XCTest/XCTest.h>
-#import "YKFTestCase.h"
-#import "YKFCBOREncoder.h"
+#import <YubiKit/YKFTestCase.h>
+#import <YubiKit/YKFCBOREncoder.h>
 
 @interface YKFCBOREncoderTests: YKFTestCase
 @end

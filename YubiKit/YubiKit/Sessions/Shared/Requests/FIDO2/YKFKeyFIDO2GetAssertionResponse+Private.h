@@ -13,7 +13,7 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import "YKFKeyFIDO2GetAssertionResponse.h"
+#import <YubiKit/YKFKeyFIDO2GetAssertionResponse.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

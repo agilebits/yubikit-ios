@@ -13,7 +13,7 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import "YKFOTPURIParser.h"
+#import <YubiKit/YKFOTPURIParser.h>
 
 @interface FakeYKFOTPURIParser: NSObject<YKFOTPURIParserProtocol>
 

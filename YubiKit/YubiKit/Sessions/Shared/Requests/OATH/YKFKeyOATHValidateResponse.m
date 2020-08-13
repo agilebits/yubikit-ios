@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKeyOATHValidateResponse.h"
-#import "YKFAssert.h"
-#import "YKFNSDataAdditions+Private.h"
+#import <YubiKit/YKFKeyOATHValidateResponse.h>
+#import <YubiKit/YKFAssert.h>
+#import <YubiKit/YKFNSDataAdditions+Private.h>
 
 static const UInt8 YKFKeyOATHValidateResponseTag = 0x75;
 

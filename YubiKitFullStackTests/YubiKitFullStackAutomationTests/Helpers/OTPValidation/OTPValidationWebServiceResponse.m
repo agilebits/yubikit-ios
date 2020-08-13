@@ -6,7 +6,7 @@
 //  Copyright © 2018 Yubico. All rights reserved.
 //
 
-#import "OTPValidationWebServiceResponse.h"
+#import "OTPValidationWebServiceResponse.h>
 
 @interface OTPValidationWebServiceResponse()
 

@@ -12,10 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFFIDO2CommandAPDU.h"
-#import "YKFAPDUCommandInstruction.h"
-#import "YKFNSMutableDataAdditions.h"
-#import "YKFAssert.h"
+#import <YubiKit/YKFFIDO2CommandAPDU.h>
+#import <YubiKit/YKFAPDUCommandInstruction.h>
+#import <YubiKit/YKFNSMutableDataAdditions.h>
+#import <YubiKit/YKFAssert.h>
 
 @implementation YKFFIDO2CommandAPDU
 

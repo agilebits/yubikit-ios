@@ -8,8 +8,8 @@
 
 #import <XCTest/XCTest.h>
 
-#import "OTPValidationWebService.h"
-#import "OTPValidationWebServiceResponse.h"
+#import "OTPValidationWebService.h>
+#import "OTPValidationWebServiceResponse.h>
 
 /*
  Yubicloud API key

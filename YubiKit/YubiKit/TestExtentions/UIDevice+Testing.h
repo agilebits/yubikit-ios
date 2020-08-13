@@ -13,7 +13,7 @@
 // limitations under the License.
 
 #import <UIKit/UIKit.h>
-#import "UIDeviceAdditions.h"
+#import <YubiKit/UIDeviceAdditions.h>
 
 @protocol YKFUIDeviceProtocol <NSObject>
 

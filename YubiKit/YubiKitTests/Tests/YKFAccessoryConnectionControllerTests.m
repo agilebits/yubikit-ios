@@ -14,10 +14,10 @@
 
 #import <XCTest/XCTest.h>
 
-#import "YKFTestCase.h"
-#import "YKFAccessoryConnectionController.h"
-#import "FakeEASession.h"
-#import "YKFAPDU+Private.h"
+#import <YubiKit/YKFTestCase.h>
+#import <YubiKit/YKFAccessoryConnectionController.h>
+#import "FakeEASession.h>
+#import <YubiKit/YKFAPDU+Private.h>
 
 @interface YKFAccessoryConnectionControllerTests: YKFTestCase
 

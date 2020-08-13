@@ -13,17 +13,20 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import "YKFKeyService.h"
-#import "YKFKeyOATHPutRequest.h"
-#import "YKFKeyOATHDeleteRequest.h"
-#import "YKFKeyOATHCalculateRequest.h"
-#import "YKFKeyOATHCalculateAllRequest.h"
-#import "YKFKeyOATHCalculateResponse.h"
-#import "YKFKeyOATHSetCodeRequest.h"
-#import "YKFKeyOATHValidateRequest.h"
-#import "YKFKeyOATHListResponse.h"
-#import "YKFKeyOATHCalculateAllResponse.h"
+#import <YubiKit/YKFKeyService.h>
+#import <YubiKit/YKFKeyVersion.h>
 
+@class YKFKeyOATHCalculateAllRequest,
+       YKFKeyOATHCalculateAllResponse,
+       YKFKeyOATHCalculateRequest,
+       YKFKeyOATHCalculateResponse,
+       YKFKeyOATHDeleteRequest,
+       YKFKeyOATHListResponse,
+       YKFKeyOATHPutRequest,
+       YKFKeyOATHRenameRequest,
+       YKFKeyOATHSelectApplicationResponse,
+       YKFKeyOATHSetCodeRequest,
+       YKFKeyOATHValidateRequest;
 /**
  * ---------------------------------------------------------------------------------------------------------------------
  * @name OATH Service Response Blocks
@@ -86,6 +89,21 @@ typedef void (^YKFKeyOATHServiceListCompletionBlock)
 typedef void (^YKFKeyOATHServiceCalculateAllCompletionBlock)
     (YKFKeyOATHCalculateAllResponse* _Nullable response, NSError* _Nullable error);
 
+/*!
+ @abstract
+    Response block for [selectOATHApplicationWithCompletion:] which provides the result for the execution
+    of the Calculate All request.
+ 
+ @param response
+    The response of the request when it was successful. In case of error this parameter is nil.
+ 
+ @param error
+    In case of a failed request this parameter contains the error. If the request was successful this
+    parameter is nil.
+ */
+typedef void (^YKFKeyOATHSelectApplicationCompletionBlock)
+    (YKFKeyOATHSelectApplicationResponse* _Nullable response, NSError* _Nullable error);
+
 /**
  * ---------------------------------------------------------------------------------------------------------------------
  * @name OATH Service Protocol
@@ -140,6 +158,27 @@ NS_ASSUME_NONNULL_BEGIN
     This method is thread safe and can be invoked from any thread (main or a background thread).
  */
 - (void)executeDeleteRequest:(YKFKeyOATHDeleteRequest *)request
+                  completion:(YKFKeyOATHServiceCompletionBlock)completion;
+
+/*!
+ @method executeRenameRequest:completion:
+ 
+ @abstract
+    Sends to the key an OATH Rename request to update issuer and account on an existing credential. The request is performed
+    asynchronously on a background execution queue. This operation is available on Yubikeys from version 5.3.1.
+ 
+ @param request
+    The request which contains the required information to rename a credential.
+ 
+ @param completion
+    The response block which is executed after the request was processed by the key. The completion block
+    will be executed on a background thread. If the intention is to update the UI, dispatch the results
+    on the main thread to avoid an UIKit assertion.
+ 
+ @note
+    This method is thread safe and can be invoked from any thread (main or a background thread).
+ */
+- (void)executeRenameRequest:(YKFKeyOATHRenameRequest *)request
                   completion:(YKFKeyOATHServiceCompletionBlock)completion;
 
 /*!
@@ -262,6 +301,22 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)executeValidateRequest:(YKFKeyOATHValidateRequest *)request
                     completion:(YKFKeyOATHServiceCompletionBlock)completion;
+/*!
+ @method selectOATHApplicationWithCompletion:
+ 
+ @abstract
+    Sends to the key an OATH select request. This is the first request that is executed before sending any other request be defualt.
+    This method can be executed to receive response on selection.
+ 
+ @param completion
+    The response block which is executed after the request was processed by the key. The completion block
+    will be executed on a background thread. If the intention is to update the UI, dispatch the results
+    on the main thread to avoid an UIKit assertion.
+ 
+ @note
+    This method is thread safe and can be invoked from any thread (main or a background thread).
+ */
+- (void)selectOATHApplicationWithCompletion:(YKFKeyOATHSelectApplicationCompletionBlock)completion;
 
 @end
 

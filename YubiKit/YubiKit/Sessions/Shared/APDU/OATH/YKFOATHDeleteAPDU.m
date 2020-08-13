@@ -12,12 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFOATHDeleteAPDU.h"
-#import "YKFKeyOATHDeleteRequest.h"
-#import "YKFAPDUCommandInstruction.h"
-#import "YKFAssert.h"
-#import "YKFNSMutableDataAdditions.h"
-#import "YKFOATHCredential+Private.h"
+#import <YubiKit/YKFOATHDeleteAPDU.h>
+#import <YubiKit/YKFKeyOATHDeleteRequest.h>
+#import <YubiKit/YKFAPDUCommandInstruction.h>
+#import <YubiKit/YKFAssert.h>
+#import <YubiKit/YKFNSMutableDataAdditions.h>
+#import <YubiKit/YKFOATHCredential+Private.h>
 
 static const UInt8 YKFOATHDeleteAPDUNameTag = 0x71;
 

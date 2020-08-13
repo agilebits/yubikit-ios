@@ -12,10 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKeyOATHCalculateResponse.h"
-#import "YKFKeyOATHCalculateResponse+Private.h"
-#import "YKFAssert.h"
-#import "YKFNSDataAdditions+Private.h"
+#import <YubiKit/YKFKeyOATHCalculateResponse.h>
+#import <YubiKit/YKFKeyOATHCalculateResponse+Private.h>
+#import <YubiKit/YKFAssert.h>
+#import <YubiKit/YKFNSDataAdditions+Private.h>
 
 typedef NS_ENUM(NSUInteger, YKFKeyOATHCalculateResponseType) {
     YKFKeyOATHCalculateResponseTypeFull = 0x75,

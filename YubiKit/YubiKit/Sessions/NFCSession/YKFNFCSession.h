@@ -13,12 +13,12 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import "YKFNFCTagDescription.h"
-#import "YKFNFCOTPService.h"
-#import "YKFKeyU2FService.h"
-#import "YKFKeyFIDO2Service.h"
-#import "YKFKeyOATHService.h"
-#import "YKFKeyRawCommandService.h"
+#import <YubiKit/YKFNFCTagDescription.h>
+#import <YubiKit/YKFNFCOTPService.h>
+#import <YubiKit/YKFKeyU2FService.h>
+#import <YubiKit/YKFKeyFIDO2Service.h>
+#import <YubiKit/YKFKeyOATHService.h>
+#import <YubiKit/YKFKeyRawCommandService.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

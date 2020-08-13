@@ -15,8 +15,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import "YKFNFCSession.h"
-#import "YKFAccessorySession.h"
+#import <YubiKit/YKFNFCSession.h>
+#import <YubiKit/YKFAccessorySession.h>
 
 /*!
  @protocol YubiKitManagerProtocol

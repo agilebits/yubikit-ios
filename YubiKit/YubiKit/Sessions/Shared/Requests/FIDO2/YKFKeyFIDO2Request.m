@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKeyFIDO2Request.h"
-#import "YKFKeyFIDO2Request+Private.h"
-#import "YKFAPDU.h"
+#import <YubiKit/YKFKeyFIDO2Request.h>
+#import <YubiKit/YKFKeyFIDO2Request+Private.h>
+#import <YubiKit/YKFAPDU.h>
 
 static const int YKFKeyFIDO2RequestMaxRetries = 30; // times
 static const NSTimeInterval YKFKeyFIDO2RequestRetryTimeInterval = 0.5; // seconds

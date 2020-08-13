@@ -13,9 +13,9 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import "YKFNSDataAdditions.h"
-#import "YKFNSDataAdditions+Private.h"
-#import "MF_Base32Additions.h"
+#import <YubiKit/YKFNSDataAdditions.h>
+#import <YubiKit/YKFNSDataAdditions+Private.h>
+#import <YubiKit/MF_Base32Additions.h>
 
 #pragma mark - SHA
 
@@ -248,7 +248,59 @@
 @implementation NSData(NSData_Base32Additions)
 
 + (NSData *)ykf_dataWithBase32String:(NSString *)base32String {
-    return [self dataWithBase32String:base32String];
+    NSRange range = NSMakeRange(0, [base32String length]);
+    NSError *error = NULL;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern: @"[A-Za-z2-7=]*" options: 0 error: &error];
+    NSRange foundRange = [regex rangeOfFirstMatchInString: base32String options: 0 range: range];
+    if (!NSEqualRanges(range, foundRange)) return nil;
+    
+    return [self dataWithBase32String: base32String];
+}
+
+@end
+
+#pragma mark - HEX string conversion
+
+@implementation NSData (NSData_HexConversion)
+
+- (NSString *)ykf_hexadecimalString
+{
+    /* Returns hexadecimal string of NSData. Empty string if data is empty. */
+    const unsigned char *dataBuffer = (const unsigned char *)[self bytes];
+    if (!dataBuffer) {
+        return [NSString string];
+    }
+
+    NSUInteger          dataLength  = [self length];
+    NSMutableString     *hexString  = [NSMutableString stringWithCapacity:(dataLength * 2)];
+    for (int i = 0; i < dataLength; ++i) {
+        [hexString appendFormat:@"%02x", (unsigned int)dataBuffer[i]];
+    }
+
+    return [NSString stringWithString:hexString];
+}
+
+@end
+
+#pragma mark - INT conversion
+
+@implementation NSData (NSData_IntConversion)
+
+- (NSUInteger)ykf_integerValue
+{
+    UInt8 *dataBytes = (UInt8 *)self.bytes;
+    if (!dataBytes) {
+        return 0;
+    }
+    
+    NSUInteger value = 0;
+    NSUInteger dataLength  = [self length];
+    for (int i = 0; i < dataLength; ++i) {
+        value <<= 8;
+        value += dataBytes[i];
+    }
+
+    return value;
 }
 
 @end

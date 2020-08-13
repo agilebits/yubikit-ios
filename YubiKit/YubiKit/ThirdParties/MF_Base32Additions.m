@@ -9,7 +9,7 @@
 //  Public Domain
 //
 
-#import "MF_Base32Additions.h"
+#import <YubiKit/MF_Base32Additions.h>
 
 @implementation MF_Base32Codec
 +(NSData *)dataFromBase32String:(NSString *)encoding

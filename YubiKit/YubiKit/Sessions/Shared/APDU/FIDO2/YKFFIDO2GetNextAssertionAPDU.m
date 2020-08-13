@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFFIDO2GetNextAssertionAPDU.h"
+#import <YubiKit/YKFFIDO2GetNextAssertionAPDU.h>
 
 @implementation YKFFIDO2GetNextAssertionAPDU
 

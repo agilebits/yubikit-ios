@@ -13,7 +13,7 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import "YKFPCSCLayer.h"
+#import <YubiKit/YKFPCSCLayer.h>
 
 @interface FakeYKFPCSCLayer: NSObject<YKFPCSCLayerProtocol>
 

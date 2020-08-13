@@ -12,13 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKeyOATHListResponse.h"
-#import "YKFKeyOATHListResponse+Private.h"
-#import "YKFOATHCredential.h"
-#import "YKFOATHCredential+Private.h"
-#import "YKFAssert.h"
-#import "YKFNSStringAdditions.h"
-#import "YKFNSDataAdditions+Private.h"
+#import <YubiKit/YKFKeyOATHListResponse.h>
+#import <YubiKit/YKFKeyOATHListResponse+Private.h>
+#import <YubiKit/YKFOATHCredential.h>
+#import <YubiKit/YKFOATHCredential+Private.h>
+#import <YubiKit/YKFAssert.h>
+#import <YubiKit/YKFNSStringAdditions.h>
+#import <YubiKit/YKFNSDataAdditions+Private.h>
 
 static const int YKFKeyOATHListResponseNameTag = 0x72;
 
@@ -115,7 +115,6 @@ static const int YKFKeyOATHListResponseNameTag = 0x72;
         credential.period = period;
         credential.issuer = issuer;
         credential.account = account;
-        credential.label = label;
         
         [parsedCredentials addObject:credential];
         

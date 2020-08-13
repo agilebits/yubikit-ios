@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFAccessoryDescription.h"
-#import "YKFAssert.h"
-#import "YKFAccessoryDescription+Private.h"
+#import <YubiKit/YKFAccessoryDescription.h>
+#import <YubiKit/YKFAssert.h>
+#import <YubiKit/YKFAccessoryDescription+Private.h>
 
 @interface YKFAccessoryDescription()
 

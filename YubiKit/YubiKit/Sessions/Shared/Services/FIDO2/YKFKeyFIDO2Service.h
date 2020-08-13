@@ -13,18 +13,18 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import "YKFKeyService.h"
+#import <YubiKit/YKFKeyService.h>
 
-#import "YKFKeyFIDO2Request.h"
-#import "YKFKeyFIDO2MakeCredentialRequest.h"
-#import "YKFKeyFIDO2GetAssertionRequest.h"
-#import "YKFKeyFIDO2VerifyPinRequest.h"
-#import "YKFKeyFIDO2SetPinRequest.h"
-#import "YKFKeyFIDO2ChangePinRequest.h"
+#import <YubiKit/YKFKeyFIDO2Request.h>
+#import <YubiKit/YKFKeyFIDO2MakeCredentialRequest.h>
+#import <YubiKit/YKFKeyFIDO2GetAssertionRequest.h>
+#import <YubiKit/YKFKeyFIDO2VerifyPinRequest.h>
+#import <YubiKit/YKFKeyFIDO2SetPinRequest.h>
+#import <YubiKit/YKFKeyFIDO2ChangePinRequest.h>
 
-#import "YKFKeyFIDO2GetInfoResponse.h"
-#import "YKFKeyFIDO2MakeCredentialResponse.h"
-#import "YKFKeyFIDO2GetAssertionResponse.h"
+#import <YubiKit/YKFKeyFIDO2GetInfoResponse.h>
+#import <YubiKit/YKFKeyFIDO2MakeCredentialResponse.h>
+#import <YubiKit/YKFKeyFIDO2GetAssertionResponse.h>
 
 /**
  * ---------------------------------------------------------------------------------------------------------------------

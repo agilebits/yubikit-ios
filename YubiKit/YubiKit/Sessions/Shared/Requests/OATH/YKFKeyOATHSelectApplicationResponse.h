@@ -13,7 +13,8 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import "YKFOATHCredential.h"
+#import <YubiKit/YKFOATHCredential.h>
+#import <YubiKit/YKFKeyVersion.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSData *selectID;
 @property (nonatomic, readonly, nullable) NSData *challenge;
 @property (nonatomic, assign, readonly) YKFOATHCredentialAlgorithm algorithm;
+@property (nonatomic, readonly, nullable) YKFKeyVersion *version;
 
 - (nullable instancetype)initWithResponseData:(NSData *)responseData NS_DESIGNATED_INITIALIZER;
 - (instancetype)init NS_UNAVAILABLE;

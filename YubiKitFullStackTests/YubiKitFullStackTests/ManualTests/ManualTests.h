@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TestDataSource.h"
+#import "TestDataSource.h>
 
 @interface ManualTests : TestDataSource
 @end

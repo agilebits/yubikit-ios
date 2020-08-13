@@ -12,10 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFQRCodeScanOverlayView.h"
-#import "YubiKitExternalLocalization.h"
-#import "YubiKitManager.h"
-#import "UIWindowAdditions.h"
+#import <YubiKit/YKFQRCodeScanOverlayView.h>
+#import <YubiKit/YubiKitExternalLocalization.h>
+#import <YubiKit/YubiKitManager.h>
+#import <YubiKit/UIWindowAdditions.h>
 
 @interface YKFQRCodeScanOverlayView()
 

@@ -13,9 +13,9 @@
 // limitations under the License.
 
 #import <XCTest/XCTest.h>
-#import "YKFTestCase.h"
-#import "YKFPCSC.h"
-#import "FakeYKFPCSCLayer.h"
+#import <YubiKit/YKFTestCase.h>
+#import <YubiKit/YKFPCSC.h>
+#import "FakeYKFPCSCLayer.h>
 
 @interface YKFPCSCTests: YKFTestCase
 

@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFAccessorySessionConfiguration.h"
-#import "YKFAssert.h"
+#import <YubiKit/YKFAccessorySessionConfiguration.h>
+#import <YubiKit/YKFAssert.h>
 
 // Protocols
 static NSString* const YKFAccessorySessionConfigurationYLPProtocolName = @"com.yubico.ylp";

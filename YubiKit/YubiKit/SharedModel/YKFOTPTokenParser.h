@@ -13,7 +13,7 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import "YKFOTPToken.h"
+#import <YubiKit/YKFOTPToken.h>
 
 typedef NS_ENUM(NSUInteger, YKFNDEFWellKnownType) {
     YKFNDEFWellKnownTypeURI  = 0x55,

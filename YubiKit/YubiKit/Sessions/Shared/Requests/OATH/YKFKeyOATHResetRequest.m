@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKeyOATHResetRequest.h"
-#import "YKFKeyOATHRequest+Private.h"
-#import "YKFOATHResetAPDU.h"
+#import <YubiKit/YKFKeyOATHResetRequest.h>
+#import <YubiKit/YKFKeyOATHRequest+Private.h>
+#import <YubiKit/YKFOATHResetAPDU.h>
 
 @implementation YKFKeyOATHResetRequest
 

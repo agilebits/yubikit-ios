@@ -12,13 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFU2FSignAPDU.h"
-#import "YKFAPDUCommandInstruction.h"
-#import "YKFNSDataAdditions.h"
-#import "YKFAssert.h"
+#import <YubiKit/YKFU2FSignAPDU.h>
+#import <YubiKit/YKFAPDUCommandInstruction.h>
+#import <YubiKit/YKFNSDataAdditions.h>
+#import <YubiKit/YKFAssert.h>
 
-#import "YKFNSDataAdditions+Private.h"
-#import "YKFKeyU2FRequest+Private.h"
+#import <YubiKit/YKFNSDataAdditions+Private.h>
+#import <YubiKit/YKFKeyU2FRequest+Private.h>
 
 static const UInt8 YKFU2FSignAPDUKeyHandleSize = 64;
 static const UInt8 YKFU2FSignAPDUEnforceUserPresenceAndSign = 0x03;

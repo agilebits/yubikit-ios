@@ -53,7 +53,7 @@ typedef NS_ENUM(NSUInteger, YKFOATHCredentialAlgorithm) {
  @abstract
     The YKFOATHCredential is a data model which contains a list of properties defining an OATH credential.
  */
-@interface YKFOATHCredential: NSObject
+@interface YKFOATHCredential: NSObject <NSCopying>
 
 /*!
  The credential type (HOTP or TOTP).
@@ -69,7 +69,7 @@ typedef NS_ENUM(NSUInteger, YKFOATHCredentialAlgorithm) {
  The Label of the credential as defined in the Key URI Format specifications:
  https://github.com/google/google-authenticator/wiki/Key-Uri-Format
  */
-@property (nonatomic, nullable) NSString *label;
+@property (nonatomic, nullable, readonly) NSString *label;
 
 /*!
  The Secret of the credential as defined in the Key URI Format specifications:

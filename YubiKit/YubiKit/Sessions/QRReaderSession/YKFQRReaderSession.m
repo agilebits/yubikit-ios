@@ -12,10 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFQRReaderSession.h"
-#import "YKFQRCodeScanViewController.h"
-#import "YubiKitDeviceCapabilities.h"
-#import "YKFAssert.h"
+#import <YubiKit/YKFQRReaderSession.h>
+#import <YubiKit/YKFQRCodeScanViewController.h>
+#import <YubiKit/YubiKitDeviceCapabilities.h>
+#import <YubiKit/YKFAssert.h>
 
 @interface YKFQRReaderSession()<YKFQRCodeScanViewControllerDelegate>
 

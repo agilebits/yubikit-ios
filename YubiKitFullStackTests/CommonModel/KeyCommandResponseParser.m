@@ -8,7 +8,7 @@
 
 #import <YubiKit/YubiKit.h>
 #import <YubiKit/Helpers/Additions/YKFNSDataAdditions+Private.h>
-#import "KeyCommandResponseParser.h"
+#import "KeyCommandResponseParser.h>
 
 @implementation KeyCommandResponseParser
 

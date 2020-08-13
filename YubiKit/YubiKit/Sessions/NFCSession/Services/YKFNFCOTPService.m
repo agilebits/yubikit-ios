@@ -14,21 +14,21 @@
 
 #import <CoreNFC/CoreNFC.h>
 
-#import "YKFNFCOTPService.h"
-#import "YKFNFCOTPService+Private.h"
+#import <YubiKit/YKFNFCOTPService.h>
+#import <YubiKit/YKFNFCOTPService+Private.h>
 
-#import "YKFNFCError.h"
-#import "YKFNFCError+Errors.h"
+#import <YubiKit/YKFNFCError.h>
+#import <YubiKit/YKFNFCError+Errors.h>
 
-#import "YubiKitExternalLocalization.h"
-#import "YKFOTPTokenParser.h"
-#import "YKFLogger.h"
-#import "YKFDispatch.h"
-#import "YubiKitDeviceCapabilities.h"
-#import "YKFBlockMacros.h"
-#import "YKFAssert.h"
+#import <YubiKit/YubiKitExternalLocalization.h>
+#import <YubiKit/YKFOTPTokenParser.h>
+#import <YubiKit/YKFLogger.h>
+#import <YubiKit/YKFDispatch.h>
+#import <YubiKit/YubiKitDeviceCapabilities.h>
+#import <YubiKit/YKFBlockMacros.h>
+#import <YubiKit/YKFAssert.h>
 
-#import "NFCNDEFReaderSession+Testing.h"
+#import <YubiKit/NFCNDEFReaderSession+Testing.h>
 
 @interface YKFNFCOTPService()<NFCNDEFReaderSessionDelegate>
 

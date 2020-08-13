@@ -12,10 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKeyOATHPutRequest.h"
-#import "YKFOATHPutAPDU.h"
-#import "YKFAssert.h"
-#import "YKFKeyOATHRequest+Private.h"
+#import <YubiKit/YKFKeyOATHPutRequest.h>
+#import <YubiKit/YKFOATHPutAPDU.h>
+#import <YubiKit/YKFAssert.h>
+#import <YubiKit/YKFKeyOATHRequest+Private.h>
 
 @interface YKFKeyOATHPutRequest()
 

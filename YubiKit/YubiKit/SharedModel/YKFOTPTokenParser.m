@@ -14,12 +14,12 @@
 
 #import <CoreNFC/CoreNFC.h>
 
-#import "YKFOTPTokenParser.h"
-#import "YKFOTPTokenValidator.h"
-#import "YKFOTPURIParser.h"
-#import "YKFOTPTextParser.h"
-#import "YKFLogger.h"
-#import "YubiKitConfiguration.h"
+#import <YubiKit/YKFOTPTokenParser.h>
+#import <YubiKit/YKFOTPTokenValidator.h>
+#import <YubiKit/YKFOTPURIParser.h>
+#import <YubiKit/YKFOTPTextParser.h>
+#import <YubiKit/YKFLogger.h>
+#import <YubiKit/YubiKitConfiguration.h>
 
 @interface YKFOTPTokenParser()
 

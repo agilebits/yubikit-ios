@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKeyCommandConfiguration.h"
+#import <YubiKit/YKFKeyCommandConfiguration.h>
 
 @implementation YKFKeyCommandConfiguration
 
@@ -29,7 +29,7 @@
 + (YKFKeyCommandConfiguration *)defaultCommandCofiguration {
     YKFKeyCommandConfiguration *configuration = [[YKFKeyCommandConfiguration alloc] init];
 
-    configuration.commandTime = 0.2;
+    configuration.commandTime = 0.002;
     configuration.commandTimeout = 10;
     configuration.commandProbeTime = 0.05;
     
@@ -39,7 +39,7 @@
 + (YKFKeyCommandConfiguration *)longCommandCofiguration {
     YKFKeyCommandConfiguration *configuration = [[YKFKeyCommandConfiguration alloc] init];
     
-    configuration.commandTime = 2;
+    configuration.commandTime = 0.2;
     configuration.commandTimeout = 30;
     configuration.commandProbeTime = 0.05;
     

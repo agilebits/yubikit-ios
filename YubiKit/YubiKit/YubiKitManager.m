@@ -14,11 +14,11 @@
 
 #import <ExternalAccessory/ExternalAccessory.h>
 
-#import "YubiKitManager.h"
-#import "YKFAccessorySessionConfiguration.h"
+#import <YubiKit/YubiKitManager.h>
+#import <YubiKit/YKFAccessorySessionConfiguration.h>
 
-#import "YKFNFCOTPService+Private.h"
-#import "YKFAccessorySession+Private.h"
+#import <YubiKit/YKFNFCOTPService+Private.h>
+#import <YubiKit/YKFAccessorySession+Private.h>
 
 @interface YubiKitManager()
 

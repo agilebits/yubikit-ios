@@ -12,17 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFAccessoryConnectionController.h"
-#import "YubiKitManager.h"
-#import "YKFPCSCLayer.h"
-#import "YKFPCSCErrors.h"
-#import "YKFPCSCTypes.h"
-#import "YKFAssert.h"
-#import "YKFBlockMacros.h"
-#import "YKFPCSCErrorMap.h"
-#import "YKFLogger.h"
-#import "YKFAccessorySession+Private.h"
-#import "YKFNSDataAdditions+Private.h"
+#import <YubiKit/YKFAccessoryConnectionController.h>
+#import <YubiKit/YubiKitManager.h>
+#import <YubiKit/YKFPCSCLayer.h>
+#import <YubiKit/YKFPCSCErrors.h>
+#import <YubiKit/YKFPCSCTypes.h>
+#import <YubiKit/YKFAssert.h>
+#import <YubiKit/YKFBlockMacros.h>
+#import <YubiKit/YKFPCSCErrorMap.h>
+#import <YubiKit/YKFLogger.h>
+#import <YubiKit/YKFAccessorySession+Private.h>
+#import <YubiKit/YKFNSDataAdditions+Private.h>
 
 static NSString* const YKFPCSCLayerReaderName = @"YubiKey";
 

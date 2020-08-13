@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFQRCodeScanError.h"
-#import "YKFQRCodeScanError+Errors.h"
+#import <YubiKit/YKFQRCodeScanError.h>
+#import <YubiKit/YKFQRCodeScanError+Errors.h>
 
 NSString* const YKFQRCodeScanErrorDomain = @"YKQRCodeScanError";
 

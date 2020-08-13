@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFView.h"
-#import "YKFAssert.h"
+#import <YubiKit/YKFView.h>
+#import <YubiKit/YKFAssert.h>
 
 @implementation YKFView
 

@@ -12,11 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKeyOATHCalculateRequest.h"
-#import "YKFKeyOATHCalculateRequest+Private.h"
-#import "YKFOATHCalculateAPDU.h"
-#import "YKFAssert.h"
-#import "YKFKeyOATHRequest+Private.h"
+#import <YubiKit/YKFKeyOATHCalculateRequest.h>
+#import <YubiKit/YKFKeyOATHCalculateRequest+Private.h>
+#import <YubiKit/YKFOATHCalculateAPDU.h>
+#import <YubiKit/YKFAssert.h>
+#import <YubiKit/YKFKeyOATHRequest+Private.h>
 
 @interface YKFKeyOATHCalculateRequest()
 
@@ -41,7 +41,7 @@
     if (self) {
         self.credential = credential;
         self.timestamp = timestamp;
-        self.apdu = [[YKFOATHCalculateAPDU alloc] initWithRequest:self timestamp:self.timestamp];
+        self.apdu = [[YKFOATHCalculateAPDU alloc] initWithRequest:self];
     }
     return self;
 }

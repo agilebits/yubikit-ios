@@ -12,10 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKeyOATHDeleteRequest.h"
-#import "YKFOATHDeleteAPDU.h"
-#import "YKFAssert.h"
-#import "YKFKeyOATHRequest+Private.h"
+#import <YubiKit/YKFKeyOATHDeleteRequest.h>
+#import <YubiKit/YKFOATHDeleteAPDU.h>
+#import <YubiKit/YKFAssert.h>
+#import <YubiKit/YKFKeyOATHRequest+Private.h>
 
 @interface YKFKeyOATHDeleteRequest()
 

@@ -14,8 +14,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import "YKFOTPURIParserProtocol.h"
-#import "YKFOTPTextParserProtocol.h"
+#import <YubiKit/YKFOTPURIParserProtocol.h>
+#import <YubiKit/YKFOTPTextParserProtocol.h>
 
 
 /*!

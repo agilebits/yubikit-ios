@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKeyFIDO2ClientPinResponse.h"
-#import "YKFCBORDEcoder.h"
-#import "YKFAssert.h"
+#import <YubiKit/YKFKeyFIDO2ClientPinResponse.h>
+#import <YubiKit/YKFCBORDEcoder.h>
+#import <YubiKit/YKFAssert.h>
 
 typedef NS_ENUM(NSUInteger, YKFKeyFIDO2ClientPinResponseKey) {
     YKFKeyFIDO2ClientPinResponseKeyKeyAgreement = 0x01,

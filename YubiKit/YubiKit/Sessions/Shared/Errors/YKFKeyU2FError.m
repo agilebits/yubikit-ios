@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKeyU2FError.h"
-#import "YKFKeySessionError+Private.h"
+#import <YubiKit/YKFKeyU2FError.h>
+#import <YubiKit/YKFKeySessionError+Private.h>
 
 static NSString* const YKFKeyU2FErrorU2FSigningUnavailableDescription = @"A sign operation was performed without registration first."
                                                                          "Register the device before authenticating with it.";

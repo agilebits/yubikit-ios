@@ -9,9 +9,9 @@
 #import <XCTest/XCTest.h>
 #import <YubiKit/YubiKit.h>
 
-#import "TestSharedLogger.h"
-#import "AutomationTest.h"
-#import "MoLYService.h"
+#import "TestSharedLogger.h>
+#import "AutomationTest.h>
+#import "MoLYService.h>
 
 // Smoke tests iterations
 static const int U2FAutomationTestsRegistrationIterations = 5;

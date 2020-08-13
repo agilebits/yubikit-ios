@@ -12,42 +12,53 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKeyOATHService.h"
-#import "YKFKeyOATHService+Private.h"
-#import "YKFKeyService+Private.h"
-#import "YKFAccessoryConnectionController.h"
-#import "YKFKeyOATHError.h"
-#import "YKFKeyAPDUError.h"
-#import "YKFOATHCredentialValidator.h"
-#import "YKFLogger.h"
-#import "YKFKeyCommandConfiguration.h"
-#import "YKFBlockMacros.h"
-#import "YKFAssert.h"
+#import <YubiKit/YKFKeyOATHService.h>
+#import <YubiKit/YKFKeyOATHService+Private.h>
+#import <YubiKit/YKFKeyService+Private.h>
+#import <YubiKit/YKFAccessoryConnectionController.h>
+#import <YubiKit/YKFKeyOATHError.h>
+#import <YubiKit/YKFKeyAPDUError.h>
+#import <YubiKit/YKFOATHCredentialValidator.h>
+#import <YubiKit/YKFLogger.h>
+#import <YubiKit/YKFKeyCommandConfiguration.h>
+#import <YubiKit/YKFBlockMacros.h>
+#import <YubiKit/YKFAssert.h>
 
-#import "YKFSelectOATHApplicationAPDU.h"
-#import "YKFOATHSendRemainingAPDU.h"
-#import "YKFOATHSetCodeAPDU.h"
-#import "YKFOATHValidateAPDU.h"
+#import <YubiKit/YKFSelectOATHApplicationAPDU.h>
+#import <YubiKit/YKFOATHSendRemainingAPDU.h>
+#import <YubiKit/YKFOATHSetCodeAPDU.h>
+#import <YubiKit/YKFOATHValidateAPDU.h>
 
-#import "YKFKeySessionError+Private.h"
-#import "YKFKeyOATHRequest+Private.h"
+#import <YubiKit/YKFKeySessionError+Private.h>
+#import <YubiKit/YKFKeyOATHRequest+Private.h>
 
-#import "YKFNSDataAdditions.h"
-#import "YKFNSDataAdditions+Private.h"
+#import <YubiKit/YKFNSDataAdditions.h>
+#import <YubiKit/YKFNSDataAdditions+Private.h>
 
-#import "YKFKeyOATHListRequest.h"
-#import "YKFKeyOATHResetRequest.h"
-#import "YKFKeyOATHCalculateAllRequest.h"
-#import "YKFKeyOATHCalculateAllRequest+Private.h"
-#import "YKFKeyOATHSelectApplicationResponse.h"
-#import "YKFKeyOATHValidateResponse.h"
-#import "YKFKeyOATHCalculateAllResponse.h"
+#import <YubiKit/YKFAPDU+Private.h>
 
-#import "YKFKeyOATHCalculateResponse+Private.h"
-#import "YKFKeyOATHListResponse+Private.h"
-#import "YKFKeyOATHCalculateAllResponse+Private.h"
-#import "YKFKeyOATHCalculateRequest+Private.h"
-#import "YKFAPDU+Private.h"
+#import <YubiKit/YKFKeyOATHCalculateAllRequest+Private.h>
+#import <YubiKit/YKFKeyOATHCalculateAllRequest.h>
+#import <YubiKit/YKFKeyOATHCalculateAllRequest.h>
+#import <YubiKit/YKFKeyOATHCalculateAllResponse+Private.h>
+#import <YubiKit/YKFKeyOATHCalculateAllResponse.h>
+#import <YubiKit/YKFKeyOATHCalculateAllResponse.h>
+#import <YubiKit/YKFKeyOATHCalculateRequest+Private.h>
+#import <YubiKit/YKFKeyOATHCalculateRequest.h>
+#import <YubiKit/YKFKeyOATHCalculateResponse+Private.h>
+#import <YubiKit/YKFKeyOATHCalculateResponse.h>
+#import <YubiKit/YKFKeyOATHDeleteRequest.h>
+#import <YubiKit/YKFKeyOATHListRequest.h>
+#import <YubiKit/YKFKeyOATHListResponse+Private.h>
+#import <YubiKit/YKFKeyOATHListResponse.h>
+#import <YubiKit/YKFKeyOATHPutRequest.h>
+#import <YubiKit/YKFKeyOATHRenameRequest.h>
+#import <YubiKit/YKFKeyOATHResetRequest.h>
+#import <YubiKit/YKFKeyOATHSelectApplicationResponse.h>
+#import <YubiKit/YKFKeyOATHSelectApplicationResponse.h>
+#import <YubiKit/YKFKeyOATHSetCodeRequest.h>
+#import <YubiKit/YKFKeyOATHValidateRequest.h>
+#import <YubiKit/YKFKeyOATHValidateResponse.h>
 
 static const NSTimeInterval YKFKeyOATHServiceTimeoutThreshold = 10; // seconds
 
@@ -63,6 +74,8 @@ typedef void (^YKFKeyOATHServiceResultCompletionBlock)(NSData* _Nullable  result
  timeout the cache gets invalidated to allow again the following requests to select the application again.
  */
 @property (nonatomic) YKFKeyOATHSelectApplicationResponse *cachedSelectApplicationResponse;
+
+@property (nonatomic, readwrite) YKFKeyVersion* version;
 
 @end
 
@@ -102,6 +115,25 @@ typedef void (^YKFKeyOATHServiceResultCompletionBlock)(NSData* _Nullable  result
     YKFKeySessionError *credentialError = [YKFOATHCredentialValidator validateCredential:request.credential includeSecret:NO];
     if (credentialError) {
         completion(credentialError);
+    }
+    
+    [self executeOATHRequest:request completion:^(NSData * _Nullable result, NSError * _Nullable error) {
+        // No result except status code
+        completion(error);
+    }];
+}
+
+- (void)executeRenameRequest:(YKFKeyOATHRenameRequest *)request completion:(YKFKeyOATHServiceCompletionBlock)completion {
+    YKFParameterAssertReturn(request);
+    YKFParameterAssertReturn(completion);
+    
+    YKFKeySessionError *credentialError = [YKFOATHCredentialValidator validateCredential:request.credential includeSecret:NO];
+    if (credentialError) {
+        completion(credentialError);
+    }
+    YKFKeySessionError *renamedCredentialError = [YKFOATHCredentialValidator validateCredential:request.renamedCredential includeSecret:NO];
+    if (renamedCredentialError) {
+        completion(renamedCredentialError);
     }
     
     [self executeOATHRequest:request completion:^(NSData * _Nullable result, NSError * _Nullable error) {
@@ -209,7 +241,7 @@ typedef void (^YKFKeyOATHServiceResultCompletionBlock)(NSData* _Nullable  result
 
     // This request does not reuse the select applet to get the salt for building the APDU and not ending in error.
     ykf_weak_self();
-    [self selectOATHApplicationWithCompletion:^(YKFKeyOATHSelectApplicationResponse *response, NSError *error) {
+    [self selectOATHApplicationWithCompletion:^(YKFKeyOATHSelectApplicationResponse * _Nullable response, NSError * _Nullable error) {
         ykf_safe_strong_self();
         if (error) {
             completion(error);
@@ -241,7 +273,7 @@ typedef void (^YKFKeyOATHServiceResultCompletionBlock)(NSData* _Nullable  result
 
     // This request does not reuse the select applet to get the salt for building the APDU and not ending in error.
     ykf_weak_self();
-    [self selectOATHApplicationWithCompletion:^(YKFKeyOATHSelectApplicationResponse *response, NSError *error) {
+    [self selectOATHApplicationWithCompletion:^(YKFKeyOATHSelectApplicationResponse * _Nullable response, NSError * _Nullable error) {
         ykf_safe_strong_self();
         if (error) {
             completion(error);
@@ -292,7 +324,7 @@ typedef void (^YKFKeyOATHServiceResultCompletionBlock)(NSData* _Nullable  result
     [self.delegate keyService:self willExecuteRequest:request];
     
     ykf_weak_self();
-    [self selectOATHApplicationWithCompletion:^(YKFKeyOATHSelectApplicationResponse *response, NSError *error) {
+    [self selectOATHApplicationWithCompletion:^(YKFKeyOATHSelectApplicationResponse * _Nullable response, NSError * _Nullable error) {
         ykf_safe_strong_self();
         if (error) {
             completion(nil, error);
@@ -329,11 +361,11 @@ typedef void (^YKFKeyOATHServiceResultCompletionBlock)(NSData* _Nullable  result
         }
         YKFAssertReturn(result != nil, @"Invalid OATH request execution result value on success.");
 
-        NSData *responseData = [self dataFromKeyResponse:result];
+        NSData *responseData = [YKFKeyService dataFromKeyResponse:result];
         [responseDataBuffer appendData:responseData];
         
-        int statusCode = [strongSelf statusCodeFromKeyResponse: result];
-        int shortStatusCode = [strongSelf shortStatusCodeFromStatusCode:statusCode];
+        int statusCode = [YKFKeyService statusCodeFromKeyResponse: result];
+        int shortStatusCode = [YKFKeyService shortStatusCodeFromStatusCode:statusCode];
         
         if (shortStatusCode == YKFKeyAPDUErrorCodeMoreData) {
             YKFLogInfo(@"Key has more data to send. Requesting for remaining data...");            
@@ -358,6 +390,10 @@ typedef void (^YKFKeyOATHServiceResultCompletionBlock)(NSData* _Nullable  result
                 }
                 break;
                 
+            case YKFKeyAPDUErrorCodeDataInvalid:
+                completion(nil, [YKFKeyOATHError errorWithCode:YKFKeyOATHErrorCodeNoSuchObject]);
+                break;
+
             // Errors - The status code is the error. The key doesn't send any other information.
             default: {
                 YKFKeySessionError *connectionError = [YKFKeySessionError errorWithCode:statusCode];
@@ -370,7 +406,7 @@ typedef void (^YKFKeyOATHServiceResultCompletionBlock)(NSData* _Nullable  result
 
 #pragma mark - Application Selection
 
-- (void)selectOATHApplicationWithCompletion:(void (^)(YKFKeyOATHSelectApplicationResponse* _Nullable, NSError* _Nullable))completion {
+- (void)selectOATHApplicationWithCompletion:(YKFKeyOATHSelectApplicationCompletionBlock)completion {
     YKFAPDU *selectOATHApplicationAPDU = [[YKFSelectOATHApplicationAPDU alloc] init];
     
     // Return cached response if available.
@@ -390,10 +426,10 @@ typedef void (^YKFKeyOATHServiceResultCompletionBlock)(NSData* _Nullable  result
             return;
         }
         
-        int statusCode = [strongSelf statusCodeFromKeyResponse: result];
+        int statusCode = [YKFKeyService statusCodeFromKeyResponse: result];
         switch (statusCode) {
             case YKFKeyAPDUErrorCodeNoError: {
-                    NSData *responseData = [self dataFromKeyResponse:result];
+                    NSData *responseData = [YKFKeyService dataFromKeyResponse:result];
                     YKFKeyOATHSelectApplicationResponse *response = [[YKFKeyOATHSelectApplicationResponse alloc] initWithResponseData:responseData];
                     if (response) {
                         // Cache the response.

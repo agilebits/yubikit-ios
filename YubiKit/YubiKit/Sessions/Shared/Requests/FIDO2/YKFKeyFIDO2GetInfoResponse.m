@@ -12,10 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKeyFIDO2GetInfoResponse.h"
-#import "YKFKeyFIDO2GetInfoResponse+Private.h"
-#import "YKFCBORDecoder.h"
-#import "YKFAssert.h"
+#import <YubiKit/YKFKeyFIDO2GetInfoResponse.h>
+#import <YubiKit/YKFKeyFIDO2GetInfoResponse+Private.h>
+#import <YubiKit/YKFCBORDecoder.h>
+#import <YubiKit/YKFAssert.h>
 
 NSString* const YKFKeyFIDO2GetInfoResponseOptionClientPin = @"clientPin";
 NSString* const YKFKeyFIDO2GetInfoResponseOptionPlatformDevice = @"plat";

@@ -14,15 +14,15 @@
 
 #import <AVFoundation/AVFoundation.h>
 
-#import "YKFQRCodeScanViewController.h"
-#import "YKFQRCodeScanOverlayView.h"
-#import "YKFPermissions.h"
-#import "YKFQRCodeScanError.h"
-#import "YKFLogger.h"
-#import "YKFBlockMacros.h"
-#import "YKFDispatch.h"
+#import <YubiKit/YKFQRCodeScanViewController.h>
+#import <YubiKit/YKFQRCodeScanOverlayView.h>
+#import <YubiKit/YKFPermissions.h>
+#import <YubiKit/YKFQRCodeScanError.h>
+#import <YubiKit/YKFLogger.h>
+#import <YubiKit/YKFBlockMacros.h>
+#import <YubiKit/YKFDispatch.h>
 
-#import "YKFQRCodeScanError+Errors.h"
+#import <YubiKit/YKFQRCodeScanError+Errors.h>
 
 @interface YKFQRCodeScanViewController()<AVCaptureMetadataOutputObjectsDelegate, YKFQRCodeScanOverlayViewDelegate>
 

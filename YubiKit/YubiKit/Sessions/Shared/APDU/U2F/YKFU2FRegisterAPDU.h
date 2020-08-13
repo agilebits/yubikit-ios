@@ -13,7 +13,7 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import "YKFAPDU.h"
+#import <YubiKit/YKFAPDU.h>
 
 @class YKFKeyU2FRegisterRequest;
 

@@ -14,11 +14,11 @@
 
 #import <XCTest/XCTest.h>
 
-#import "YubiKitDeviceCapabilities.h"
-#import "YubiKitDeviceCapabilities+Testing.h"
+#import "YubiKitDeviceCapabilities.h>
+#import "YubiKitDeviceCapabilities+Testing.h>
 
-#import "YKFTestCase.h"
-#import "FakeUIDevice.h"
+#import <YubiKit/YKFTestCase.h>
+#import "FakeUIDevice.h>
 
 @interface YubiKitDeviceCapabilitiesTests: YKFTestCase
 @end

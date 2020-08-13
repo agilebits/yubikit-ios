@@ -7,8 +7,8 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "AutomationTest.h"
-#import "TestSharedLogger.h"
+#import "AutomationTest.h>
+#import "TestSharedLogger.h>
 
 @interface TouchAutomationTests: AutomationTest
 @end

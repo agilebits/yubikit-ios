@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFCBOREncoder.h"
-#import "YKFCBORTag.h"
-#import "YKFAssert.h"
+#import <YubiKit/YKFCBOREncoder.h>
+#import <YubiKit/YKFCBORTag.h>
+#import <YubiKit/YKFAssert.h>
 
 @implementation YKFCBOREncoder
 

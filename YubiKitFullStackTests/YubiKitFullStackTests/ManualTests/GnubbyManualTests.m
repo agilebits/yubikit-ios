@@ -6,8 +6,8 @@
 //  Copyright © 2018 Yubico. All rights reserved.
 //
 
-#import "GnubbyManualTests.h"
-#import "TestSharedLogger.h"
+#import "GnubbyManualTests.h>
+#import "TestSharedLogger.h>
 
 typedef NS_ENUM(NSUInteger, GnubbyManualTestsInstruction) {
     GnubbyTestsInstructionEcho = 0x10

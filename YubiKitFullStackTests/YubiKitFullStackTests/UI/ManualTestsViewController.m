@@ -6,8 +6,8 @@
 //  Copyright © 2018 Yubico. All rights reserved.
 //
 
-#import "ManualTestsViewController.h"
-#import "ManualTests.h"
+#import "ManualTestsViewController.h>
+#import "ManualTests.h>
 
 @interface ManualTestsViewController() <UITableViewDelegate>
 @end
