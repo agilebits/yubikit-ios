@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFViewController.h"
-#import "UIWindowAdditions.h"
+#import <YubiKit/YKFViewController.h>
+#import <YubiKit/UIWindowAdditions.h>
 
 @implementation YKFViewController
 

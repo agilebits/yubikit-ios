@@ -7,7 +7,7 @@
 //
 
 #import <YubiKit/YubiKit.h>
-#import "U2FDataParser.h"
+#import "U2FDataParser.h>
 
 @implementation U2FDataParser
 

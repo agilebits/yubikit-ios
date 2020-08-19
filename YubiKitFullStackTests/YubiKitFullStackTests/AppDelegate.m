@@ -7,8 +7,8 @@
 //
 
 #import <YubiKit/YubiKit.h>
-#import "AppDelegate.h"
-#import "AppStateController.h"
+#import "AppDelegate.h>
+#import "AppStateController.h>
 
 @interface AppDelegate ()
 @end

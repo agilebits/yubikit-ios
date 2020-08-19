@@ -812,6 +812,7 @@
 				INFOPLIST_FILE = YubiKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 2.9.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.agilebits.YubiKitDemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "YubiKitDemo-Bridging-Header.h";
@@ -833,6 +834,7 @@
 				INFOPLIST_FILE = YubiKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 2.9.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.agilebits.YubiKitDemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "YubiKitDemo-Bridging-Header.h";

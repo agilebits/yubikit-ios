@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFFIDO2TouchPoolingAPDU.h"
-#import "YKFAPDUCommandInstruction.h"
+#import <YubiKit/YKFFIDO2TouchPoolingAPDU.h>
+#import <YubiKit/YKFAPDUCommandInstruction.h>
 
 @implementation YKFFIDO2TouchPoolingAPDU
 

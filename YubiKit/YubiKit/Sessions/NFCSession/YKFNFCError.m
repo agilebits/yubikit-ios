@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFNFCError.h"
-#import "YKFNFCError+Errors.h"
+#import <YubiKit/YKFNFCError.h>
+#import <YubiKit/YKFNFCError+Errors.h>
 
 NSString* const YKFNFCErrorDomain = @"YKFNFCError";
 

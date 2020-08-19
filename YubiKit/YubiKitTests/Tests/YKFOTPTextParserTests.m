@@ -14,8 +14,8 @@
 
 #import <XCTest/XCTest.h>
 
-#import "YKFTestCase.h"
-#import "YKFOTPTextParser.h"
+#import <YubiKit/YKFTestCase.h>
+#import <YubiKit/YKFOTPTextParser.h>
 
 @interface YKFOTPTextParserTests: YKFTestCase
 

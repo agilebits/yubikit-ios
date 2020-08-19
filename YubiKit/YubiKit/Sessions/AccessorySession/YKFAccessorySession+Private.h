@@ -14,8 +14,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import "YKFAccessorySessionConfiguration.h"
-#import "EAAccessoryManager+Testing.h"
+#import <YubiKit/YKFAccessorySessionConfiguration.h>
+#import <YubiKit/EAAccessoryManager+Testing.h>
 
 typedef void (^YKFAccessorySessionStateChangeBlock)(YKFAccessorySessionState, YKFAccessorySessionState);
 

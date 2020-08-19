@@ -12,16 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFFIDO2GetAssertionAPDU.h"
-#import "YKFCBORType.h"
-#import "YKFCBOREncoder.h"
-#import "YKFAssert.h"
+#import <YubiKit/YKFFIDO2GetAssertionAPDU.h>
+#import <YubiKit/YKFCBORType.h>
+#import <YubiKit/YKFCBOREncoder.h>
+#import <YubiKit/YKFAssert.h>
 
-#import "YKFKeyFIDO2GetAssertionRequest.h"
-#import "YKFKeyFIDO2GetAssertionRequest+Private.h"
+#import <YubiKit/YKFKeyFIDO2GetAssertionRequest.h>
+#import <YubiKit/YKFKeyFIDO2GetAssertionRequest+Private.h>
 
-#import "YKFFIDO2Type.h"
-#import "YKFFIDO2Type+Private.h"
+#import <YubiKit/YKFFIDO2Type.h>
+#import <YubiKit/YKFFIDO2Type+Private.h>
 
 typedef NS_ENUM(NSUInteger, YKFFIDO2GetAssertionAPDUKey) {
     YKFFIDO2GetAssertionAPDUKeyRp               = 0x01,

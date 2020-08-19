@@ -13,8 +13,8 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import "YKFOTPTokenValidator.h"
-#import "YKFOTPTextParserProtocol.h"
+#import <YubiKit/YKFOTPTokenValidator.h>
+#import <YubiKit/YKFOTPTextParserProtocol.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

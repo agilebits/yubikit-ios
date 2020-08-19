@@ -8,10 +8,10 @@
 
 #import <YubiKit/YubiKit.h>
 
-#import "TestSharedLogger.h"
-#import "AutomationTest.h"
-#import "MoLYService.h"
-#import "U2FDataParser.h"
+#import "TestSharedLogger.h>
+#import "AutomationTest.h>
+#import "MoLYService.h>
+#import "U2FDataParser.h>
 
 static const NSTimeInterval MoLYConnectionPlugoutPluginDelay = 4; // seconds
 static const NSTimeInterval MoLYConnectionReactionDelay = 3; // seconds

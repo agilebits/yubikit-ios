@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFAccessorySession+Debugging.h"
-#import "YKFLogger.h"
+#import <YubiKit/YKFAccessorySession+Debugging.h>
+#import <YubiKit/YKFLogger.h>
 
 #ifdef DEBUG
 

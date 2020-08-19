@@ -13,7 +13,7 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import "YKFAccessoryConnectionController.h"
+#import <YubiKit/YKFAccessoryConnectionController.h>
 
 @interface FakeYKFKeyConnectionController: NSObject<YKFKeyConnectionControllerProtocol>
 

@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKeyFIDO2MakeCredentialRequest.h"
-#import "YKFKeyFIDO2MakeCredentialRequest+Private.h"
+#import <YubiKit/YKFKeyFIDO2MakeCredentialRequest.h>
+#import <YubiKit/YKFKeyFIDO2MakeCredentialRequest+Private.h>
 
 NSString* const YKFKeyFIDO2MakeCredentialRequestOptionRK = @"rk";
 NSString* const YKFKeyFIDO2MakeCredentialRequestOptionUV = @"uv";

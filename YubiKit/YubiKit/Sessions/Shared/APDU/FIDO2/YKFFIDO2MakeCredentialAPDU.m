@@ -12,15 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFFIDO2MakeCredentialAPDU.h"
-#import "YKFCBOREncoder.h"
-#import "YKFAssert.h"
+#import <YubiKit/YKFFIDO2MakeCredentialAPDU.h>
+#import <YubiKit/YKFCBOREncoder.h>
+#import <YubiKit/YKFAssert.h>
 
-#import "YKFKeyFIDO2MakeCredentialRequest.h"
-#import "YKFKeyFIDO2MakeCredentialRequest+Private.h"
+#import <YubiKit/YKFKeyFIDO2MakeCredentialRequest.h>
+#import <YubiKit/YKFKeyFIDO2MakeCredentialRequest+Private.h>
 
-#import "YKFFIDO2Type.h"
-#import "YKFFIDO2Type+Private.h"
+#import <YubiKit/YKFFIDO2Type.h>
+#import <YubiKit/YKFFIDO2Type+Private.h>
 
 typedef NS_ENUM(NSUInteger, YKFFIDO2MakeCredentialAPDUKey) {
     YKFFIDO2MakeCredentialAPDUKeyClientDataHash     = 0x01,

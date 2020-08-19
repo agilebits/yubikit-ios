@@ -13,7 +13,7 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import "YKFFIDO2CommandAPDU.h"
+#import <YubiKit/YKFFIDO2CommandAPDU.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -12,10 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFOATHCalculateAllAPDU.h"
-#import "YKFAPDUCommandInstruction.h"
-#import "YKFNSMutableDataAdditions.h"
-#import "YKFAssert.h"
+#import <YubiKit/YKFOATHCalculateAllAPDU.h>
+#import <YubiKit/YKFAPDUCommandInstruction.h>
+#import <YubiKit/YKFNSMutableDataAdditions.h>
+#import <YubiKit/YKFAssert.h>
 
 static const UInt8 YKFOATHCalculateAllAPDUChallengeTag = 0x74;
 

@@ -13,7 +13,7 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import "YKFKeyU2FRegisterResponse.h"
+#import <YubiKit/YKFKeyU2FRegisterResponse.h>
 
 @interface YKFKeyU2FRegisterResponse()
 

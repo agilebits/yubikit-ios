@@ -9,8 +9,8 @@
 #import <XCTest/XCTest.h>
 #import <YubiKit/YubiKit.h>
 
-#import "AutomationTest.h"
-#import "TestSharedLogger.h"
+#import "AutomationTest.h>
+#import "TestSharedLogger.h>
 
 @interface PCSCAutomationTests: AutomationTest
 @end

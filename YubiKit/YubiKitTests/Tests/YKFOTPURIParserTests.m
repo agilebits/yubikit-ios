@@ -14,9 +14,9 @@
 
 #import <XCTest/XCTest.h>
 
-#import "YKFTestCase.h"
-#import "YKFOTPURIParser.h"
-#import "YKFOTPTokenValidator.h"
+#import <YubiKit/YKFTestCase.h>
+#import <YubiKit/YKFOTPURIParser.h>
+#import <YubiKit/YKFOTPTokenValidator.h>
 
 @interface YKFOTPURIParserTests: YKFTestCase
 

@@ -13,11 +13,11 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import "YKFKeyService.h"
-#import "YKFKeyU2FSignRequest.h"
-#import "YKFKeyU2FSignResponse.h"
-#import "YKFKeyU2FRegisterRequest.h"
-#import "YKFKeyU2FRegisterResponse.h"
+#import <YubiKit/YKFKeyService.h>
+#import <YubiKit/YKFKeyU2FSignRequest.h>
+#import <YubiKit/YKFKeyU2FSignResponse.h>
+#import <YubiKit/YKFKeyU2FRegisterRequest.h>
+#import <YubiKit/YKFKeyU2FRegisterResponse.h>
 
 /**
  * ---------------------------------------------------------------------------------------------------------------------

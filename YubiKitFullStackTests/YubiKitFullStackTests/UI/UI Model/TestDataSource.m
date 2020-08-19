@@ -5,9 +5,9 @@
 //  Created by Conrad Ciobanica on 2018-05-16.
 //  Copyright © 2018 Yubico. All rights reserved.
 //
-#import "TestDataSource.h"
-#import "TestSharedLogger.h"
-#import "GnubbySelectU2FApplicationAPDU.h"
+#import "TestDataSource.h>
+#import "TestSharedLogger.h>
+#import "GnubbySelectU2FApplicationAPDU.h>
 
 @interface TestDataSource()<UITableViewDataSource>
 

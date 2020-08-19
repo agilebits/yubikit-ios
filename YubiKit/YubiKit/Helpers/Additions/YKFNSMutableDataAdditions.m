@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFNSMutableDataAdditions.h"
-#import "YKFAssert.h"
+#import <YubiKit/YKFNSMutableDataAdditions.h>
+#import <YubiKit/YKFAssert.h>
 
 @implementation NSMutableData(NSMutableData_APDU)
 
@@ -30,6 +30,15 @@
     [self ykf_appendByte:data.length];
     [self appendData:data];
 }
+
+- (void)ykf_appendShortWithTag:(UInt8)tag data:(NSUInteger)data {
+    YKFParameterAssertReturn(tag > 0);
+    NSMutableData *shortData =  [[NSMutableData alloc] init];
+    [shortData ykf_appendByte: data & 0xff00 >> 8];
+    [shortData ykf_appendByte: data & 0xff];
+    [self ykf_appendEntryWithTag:tag data:shortData];
+}
+
 
 - (void)ykf_appendEntryWithTag:(UInt8)tag headerBytes:(NSArray *)headerBytes data:(NSData *)data {
     YKFParameterAssertReturn(tag > 0);

@@ -12,13 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFOATHValidateAPDU.h"
-#import "YKFKeyOATHValidateRequest.h"
-#import "YKFAPDUCommandInstruction.h"
-#import "YKFOATHCredential.h"
-#import "YKFAssert.h"
-#import "YKFNSMutableDataAdditions.h"
-#import "YKFNSDataAdditions+Private.h"
+#import <YubiKit/YKFOATHValidateAPDU.h>
+#import <YubiKit/YKFKeyOATHValidateRequest.h>
+#import <YubiKit/YKFAPDUCommandInstruction.h>
+#import <YubiKit/YKFOATHCredential.h>
+#import <YubiKit/YKFAssert.h>
+#import <YubiKit/YKFNSMutableDataAdditions.h>
+#import <YubiKit/YKFNSDataAdditions+Private.h>
 
 static const UInt8 YKFKeyOATHSetCodeAPDUChallengeTag = 0x74;
 static const UInt8 YKFKeyOATHSetCodeAPDUResponseTag = 0x75;

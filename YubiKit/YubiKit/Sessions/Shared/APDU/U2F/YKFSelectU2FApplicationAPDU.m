@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFSelectU2FApplicationAPDU.h"
-#import "YKFAPDUCommandInstruction.h"
+#import <YubiKit/YKFSelectU2FApplicationAPDU.h>
+#import <YubiKit/YKFAPDUCommandInstruction.h>
 
 static const NSUInteger YKFU2fAIDSize = 8;
 static const UInt8 YKFU2fAID[YKFU2fAIDSize] = {0xA0, 0x00, 0x00, 0x06, 0x47, 0x2F, 0x00, 0x01};

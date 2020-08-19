@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFDispatch.h"
+#import <YubiKit/YKFDispatch.h>
 
 void ykf_dispatch_thread_async(NSThread* thread, dispatch_block_t block) {
     if ([NSThread currentThread] == thread) {

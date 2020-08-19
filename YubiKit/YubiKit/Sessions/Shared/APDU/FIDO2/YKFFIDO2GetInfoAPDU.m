@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFFIDO2GetInfoAPDU.h"
+#import <YubiKit/YKFFIDO2GetInfoAPDU.h>
 
 @implementation YKFFIDO2GetInfoAPDU
 

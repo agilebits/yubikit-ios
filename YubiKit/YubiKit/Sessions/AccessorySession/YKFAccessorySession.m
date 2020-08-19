@@ -15,30 +15,30 @@
 #import <ExternalAccessory/ExternalAccessory.h>
 #import <UIKit/UIKit.h>
 
-#import "YKFAccessorySession.h"
-#import "YKFAccessorySession+Private.h"
-#import "YKFAccessorySession+Debugging.h"
+#import <YubiKit/YKFAccessorySession.h>
+#import <YubiKit/YKFAccessorySession+Private.h>
+#import <YubiKit/YKFAccessorySession+Debugging.h>
 
-#import "YubiKitDeviceCapabilities.h"
-#import "YKFAccessoryConnectionController.h"
-#import "YKFAccessorySessionConfiguration.h"
-#import "YKFKeyCommandConfiguration.h"
-#import "YKFAccessoryDescription.h"
-#import "YKFKVOObservation.h"
-#import "YKFBlockMacros.h"
-#import "YKFLogger.h"
-#import "YKFDispatch.h"
-#import "YKFAssert.h"
+#import <YubiKit/YubiKitDeviceCapabilities.h>
+#import <YubiKit/YKFAccessoryConnectionController.h>
+#import <YubiKit/YKFAccessorySessionConfiguration.h>
+#import <YubiKit/YKFKeyCommandConfiguration.h>
+#import <YubiKit/YKFAccessoryDescription.h>
+#import <YubiKit/YKFKVOObservation.h>
+#import <YubiKit/YKFBlockMacros.h>
+#import <YubiKit/YKFLogger.h>
+#import <YubiKit/YKFDispatch.h>
+#import <YubiKit/YKFAssert.h>
 
-#import "YKFKeyRawCommandService+Private.h"
-#import "YKFKeyOATHService+Private.h"
-#import "YKFKeyU2FService+Private.h"
-#import "YKFKeyFIDO2Service+Private.h"
-#import "YKFKeyService+Private.h"
-#import "YKFAccessoryDescription+Private.h"
+#import <YubiKit/YKFKeyRawCommandService+Private.h>
+#import <YubiKit/YKFKeyOATHService+Private.h>
+#import <YubiKit/YKFKeyU2FService+Private.h>
+#import <YubiKit/YKFKeyFIDO2Service+Private.h>
+#import <YubiKit/YKFKeyService+Private.h>
+#import <YubiKit/YKFAccessoryDescription+Private.h>
 
-#import "EAAccessory+Testing.h"
-#import "EASession+Testing.h"
+#import <YubiKit/EAAccessory+Testing.h>
+#import <YubiKit/EASession+Testing.h>
 
 #pragma mark - Private Block Types
 

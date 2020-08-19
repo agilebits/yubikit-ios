@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFSelectOATHApplicationAPDU.h"
-#import "YKFAPDUCommandInstruction.h"
+#import <YubiKit/YKFSelectOATHApplicationAPDU.h>
+#import <YubiKit/YKFAPDUCommandInstruction.h>
 
 // SELECT APDU format: https://developers.yubico.com/OATH/YKOATH_Protocol.html
 static const NSUInteger YKFOathAIDSize = 7;

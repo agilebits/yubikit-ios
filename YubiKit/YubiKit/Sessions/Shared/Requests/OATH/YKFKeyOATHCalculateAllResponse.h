@@ -13,7 +13,7 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import "YKFOATHCredential.h"
+#import <YubiKit/YKFOATHCredential.h>
 
 /*!
  @class YKFOATHCredentialCalculateResult

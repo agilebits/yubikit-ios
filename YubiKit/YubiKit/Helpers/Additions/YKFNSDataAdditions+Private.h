@@ -50,4 +50,28 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface NSData(NSData_Conversion)
+/*!
+ @method ykf_hexadecimalString:
+ 
+ @return
+    A string from data object which represents each byte as hex symbols.
+ */
+- (NSString *)ykf_hexadecimalString;
+
+@end
+
+
+@interface NSData (NSData_IntConversion)
+
+/*!
+@method ykf_integerValue:
+
+@return
+   An integer value from data object.
+*/
+- (NSUInteger)ykf_integerValue;
+
+@end
+
 NS_ASSUME_NONNULL_END

@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKeyU2FRegisterResponse.h"
-#import "YKFAssert.h"
+#import <YubiKit/YKFKeyU2FRegisterResponse.h>
+#import <YubiKit/YKFAssert.h>
 
 @interface YKFKeyU2FRegisterResponse()
 

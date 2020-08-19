@@ -15,10 +15,10 @@
 #import <Foundation/Foundation.h>
 #import <ExternalAccessory/ExternalAccessory.h>
 
-#import "YKFKeyCommandConfiguration.h"
-#import "YKFKeyConnectionControllerProtocol.h"
-#import "YKFAPDU.h"
-#import "EASession+Testing.h"
+#import <YubiKit/YKFKeyCommandConfiguration.h>
+#import <YubiKit/YKFKeyConnectionControllerProtocol.h>
+#import <YubiKit/YKFAPDU.h>
+#import <YubiKit/EASession+Testing.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

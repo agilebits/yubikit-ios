@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKeyFIDO2Error.h"
-#import "YKFKeySessionError+Private.h"
+#import <YubiKit/YKFKeyFIDO2Error.h>
+#import <YubiKit/YKFKeySessionError+Private.h>
 
 #pragma mark - Error Descriptions
 

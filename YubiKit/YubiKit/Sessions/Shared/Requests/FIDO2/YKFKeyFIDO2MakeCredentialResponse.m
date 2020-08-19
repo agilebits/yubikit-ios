@@ -12,11 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKeyFIDO2MakeCredentialResponse.h"
-#import "YKFKeyFIDO2MakeCredentialResponse+Private.h"
-#import "YKFCBORDecoder.h"
-#import "YKFCBOREncoder.h"
-#import "YKFAssert.h"
+#import <YubiKit/YKFKeyFIDO2MakeCredentialResponse.h>
+#import <YubiKit/YKFKeyFIDO2MakeCredentialResponse+Private.h>
+#import <YubiKit/YKFCBORDecoder.h>
+#import <YubiKit/YKFCBOREncoder.h>
+#import <YubiKit/YKFAssert.h>
 
 typedef NS_ENUM(NSUInteger, YKFKeyFIDO2MakeCredentialResponseKey) {
     YKFKeyFIDO2GetInfoResponseKeyFmt        = 0x01,

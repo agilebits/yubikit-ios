@@ -15,12 +15,12 @@
 #import <UIKit/UIKit.h>
 
 #import <Foundation/Foundation.h>
-#import "YKFAccessoryDescription.h"
+#import <YubiKit/YKFAccessoryDescription.h>
 
-#import "YKFKeyU2FService.h"
-#import "YKFKeyFIDO2Service.h"
-#import "YKFKeyOATHService.h"
-#import "YKFKeyRawCommandService.h"
+#import <YubiKit/YKFKeyU2FService.h>
+#import <YubiKit/YKFKeyFIDO2Service.h>
+#import <YubiKit/YKFKeyOATHService.h>
+#import <YubiKit/YKFKeyRawCommandService.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

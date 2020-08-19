@@ -14,16 +14,16 @@
 
 #import <XCTest/XCTest.h>
 
-#import "YKFTestCase.h"
-#import "YKFKeyU2FService.h"
-#import "YKFKeyU2FService+Private.h"
-#import "FakeYKFKeyConnectionController.h"
+#import <YubiKit/YKFTestCase.h>
+#import <YubiKit/YKFKeyU2FService.h>
+#import <YubiKit/YKFKeyU2FService+Private.h>
+#import "FakeYKFKeyConnectionController.h>
 
-#import "YKFKeyU2FSignRequest.h"
-#import "YKFKeyU2FRegisterRequest.h"
+#import <YubiKit/YKFKeyU2FSignRequest.h>
+#import <YubiKit/YKFKeyU2FRegisterRequest.h>
 
-#import "YKFKeyAPDUError.h"
-#import "YKFKeyU2FError.h"
+#import <YubiKit/YKFKeyAPDUError.h>
+#import <YubiKit/YKFKeyU2FError.h>
 
 @interface YKFKeyU2FServiceTests: YKFTestCase
 

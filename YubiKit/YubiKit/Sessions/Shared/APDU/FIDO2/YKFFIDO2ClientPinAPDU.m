@@ -12,11 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFFIDO2ClientPinAPDU.h"
-#import "YKFKeyFIDO2ClientPinRequest.h"
-#import "YKFCBOREncoder.h"
-#import "YKFCBORType.h"
-#import "YKFAssert.h"
+#import <YubiKit/YKFFIDO2ClientPinAPDU.h>
+#import <YubiKit/YKFKeyFIDO2ClientPinRequest.h>
+#import <YubiKit/YKFCBOREncoder.h>
+#import <YubiKit/YKFCBORType.h>
+#import <YubiKit/YKFAssert.h>
 
 typedef NS_ENUM(NSUInteger, YKFFIDO2ClientPinAPDUKey) {
     YKFFIDO2ClientPinAPDUKeyPinProtocol     = 0x01,

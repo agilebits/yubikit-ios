@@ -13,7 +13,7 @@
 // limitations under the License.
 
 #import <AVFoundation/AVFoundation.h>
-#import "YKFPermissions.h"
+#import <YubiKit/YKFPermissions.h>
 
 @implementation YKFPermissions
 

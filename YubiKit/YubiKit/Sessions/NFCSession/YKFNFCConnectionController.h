@@ -14,7 +14,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreNFC/CoreNFC.h>
-#import "YKFKeyConnectionControllerProtocol.h"
+#import <YubiKit/YKFKeyConnectionControllerProtocol.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

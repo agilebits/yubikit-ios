@@ -13,7 +13,7 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import "YKFAccessorySession.h"
+#import <YubiKit/YKFAccessorySession.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -13,7 +13,7 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import "EAAccessory+Testing.h"
+#import "EAAccessory+Testing.h>
 
 @interface FakeEAAccessory: NSObject<YKFEAAccessoryProtocol>
 

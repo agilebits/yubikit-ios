@@ -6,8 +6,8 @@
 //  Copyright © 2018 Yubico. All rights reserved.
 //
 
-#import "GnubbyManualTestsViewController.h"
-#import "GnubbyManualTests.h"
+#import "GnubbyManualTestsViewController.h>
+#import "GnubbyManualTests.h>
 
 @interface GnubbyManualTestsViewController() <UITableViewDelegate>
 @end

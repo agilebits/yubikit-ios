@@ -14,10 +14,10 @@
 
 #import <XCTest/XCTest.h>
 
-#import "YKFTestCase.h"
-#import "YKFAccessorySessionConfiguration.h"
-#import "FakeEAAccessory.h"
-#import "EAAccessory+Testing.h"
+#import <YubiKit/YKFTestCase.h>
+#import <YubiKit/YKFAccessorySessionConfiguration.h>
+#import "FakeEAAccessory.h>
+#import "EAAccessory+Testing.h>
 
 @interface YKFAccessorySessionConfigurationTests: YKFTestCase
 

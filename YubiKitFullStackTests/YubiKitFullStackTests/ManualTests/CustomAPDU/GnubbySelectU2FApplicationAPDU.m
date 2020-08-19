@@ -6,7 +6,7 @@
 //  Copyright © 2018 Yubico. All rights reserved.
 //
 
-#import "GnubbySelectU2FApplicationAPDU.h"
+#import "GnubbySelectU2FApplicationAPDU.h>
 
 @implementation GnubbySelectU2FApplicationAPDU
 

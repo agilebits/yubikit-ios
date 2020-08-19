@@ -13,7 +13,7 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import "EASession+Testing.h"
+#import "EASession+Testing.h>
 
 @interface FakeEASession: NSObject<YKFEASessionProtocol>
 

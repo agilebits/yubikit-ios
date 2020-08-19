@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFFIDO2Type.h"
-#import "YKFCBORType.h"
-#import "YKFFIDO2Type+Private.h"
+#import <YubiKit/YKFFIDO2Type.h>
+#import <YubiKit/YKFCBORType.h>
+#import <YubiKit/YKFFIDO2Type+Private.h>
 
 #pragma mark - YKFFIDO2PublicKeyCredentialRpEntity
 

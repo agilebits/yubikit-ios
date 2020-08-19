@@ -8,9 +8,9 @@
 
 #import <XCTest/XCTest.h>
 
-#import "AutomationTest.h"
-#import "TestSharedLogger.h"
-#import "OTPValidationWebService.h"
+#import "AutomationTest.h>
+#import "TestSharedLogger.h>
+#import "OTPValidationWebService.h>
 
 // Smoke tests iterations
 static const int ModeSwitchingStressTestsIterations = 5;

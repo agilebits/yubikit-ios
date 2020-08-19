@@ -14,13 +14,13 @@
 
 #import <XCTest/XCTest.h>
 
-#import "YKFTestCase.h"
-#import "YKFNFCOTPService.h"
-#import "YKFNFCOTPService+Private.h"
-#import "YKFOTPTokenParser.h"
-#import "YubiKitDeviceCapabilities+Testing.h"
-#import "FakeNFCNDEFReaderSession.h"
-#import "FakeYubiKitDeviceCapabilities.h"
+#import <YubiKit/YKFTestCase.h>
+#import <YubiKit/YKFNFCOTPService.h>
+#import <YubiKit/YKFNFCOTPService+Private.h>
+#import <YubiKit/YKFOTPTokenParser.h>
+#import "YubiKitDeviceCapabilities+Testing.h>
+#import "FakeNFCNDEFReaderSession.h>
+#import "FakeYubiKitDeviceCapabilities.h>
 
 @interface YKFNFCOTPServiceTests: YKFTestCase
 

@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFAPDU.h"
-#import "YKFKeyCommandConfiguration.h"
+#import <YubiKit/YKFAPDU.h>
+#import <YubiKit/YKFKeyCommandConfiguration.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

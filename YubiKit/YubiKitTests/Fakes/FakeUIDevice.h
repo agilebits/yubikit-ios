@@ -13,7 +13,7 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import "UIDevice+Testing.h"
+#import "UIDevice+Testing.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

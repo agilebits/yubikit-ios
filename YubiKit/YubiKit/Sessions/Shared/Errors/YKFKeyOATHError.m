@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKeyOATHError.h"
-#import "YKFKeySessionError+Private.h"
+#import <YubiKit/YKFKeyOATHError.h>
+#import <YubiKit/YKFKeySessionError+Private.h>
 
 static NSString* const YKFKeyOATHErrorNameTooLongDescription = @"The credential has a name longer then the maximum allowed size by the key (64 bytes).";
 static NSString* const YKFKeyOATHErrorSecretTooLongDescription = @"The credential has a secret longer then the size of the hash algorithm size.";
@@ -25,6 +25,7 @@ static NSString* const YKFKeyOATHErrorMalformedValidationResponseDescription = @
 static NSString* const YKFKeyOATHErrorBadCalculateAllResponseDescription = @"The key returned a malformed response when calculating all credentials.";
 static NSString* const YKFKeyOATHErrorCodeTouchTimeoutDescription = @"The key did time out, waiting for touch.";
 static NSString* const YKFKeyOATHErrorCodeWrongPasswordDescription = @"Wrong password.";
+static NSString* const YKFKeyOATHErrorCodeNoSuchObjectDescription = @"Credential not found.";
 
 @implementation YKFKeyOATHError
 
@@ -54,7 +55,8 @@ static NSDictionary *errorMap = nil;
       @(YKFKeyOATHErrorCodeBadValidationResponse): YKFKeyOATHErrorMalformedValidationResponseDescription,
       @(YKFKeyOATHErrorCodeBadCalculateAllResponse): YKFKeyOATHErrorBadCalculateAllResponseDescription,
       @(YKFKeyOATHErrorCodeTouchTimeout): YKFKeyOATHErrorCodeTouchTimeoutDescription,
-      @(YKFKeyOATHErrorCodeWrongPassword): YKFKeyOATHErrorCodeWrongPasswordDescription
+      @(YKFKeyOATHErrorCodeWrongPassword): YKFKeyOATHErrorCodeWrongPasswordDescription,
+      @(YKFKeyOATHErrorCodeNoSuchObject): YKFKeyOATHErrorCodeNoSuchObjectDescription
       };
 }
 

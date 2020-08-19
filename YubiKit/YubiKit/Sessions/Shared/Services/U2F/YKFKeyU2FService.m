@@ -12,22 +12,22 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKeyU2FService.h"
-#import "YKFSelectU2FApplicationAPDU.h"
-#import "YKFAccessoryConnectionController.h"
-#import "YKFKeyU2FError.h"
-#import "YKFKeyAPDUError.h"
-#import "YKFKeyCommandConfiguration.h"
-#import "YKFBlockMacros.h"
-#import "YKFAssert.h"
+#import <YubiKit/YKFKeyU2FService.h>
+#import <YubiKit/YKFSelectU2FApplicationAPDU.h>
+#import <YubiKit/YKFAccessoryConnectionController.h>
+#import <YubiKit/YKFKeyU2FError.h>
+#import <YubiKit/YKFKeyAPDUError.h>
+#import <YubiKit/YKFKeyCommandConfiguration.h>
+#import <YubiKit/YKFBlockMacros.h>
+#import <YubiKit/YKFAssert.h>
 
-#import "YKFKeySessionError+Private.h"
-#import "YKFKeyU2FService+Private.h"
-#import "YKFKeyU2FRequest+Private.h"
-#import "YKFKeyU2FRegisterResponse+Private.h"
-#import "YKFKeyU2FSignResponse+Private.h"
-#import "YKFKeyService+Private.h"
-#import "YKFAPDU+Private.h"
+#import <YubiKit/YKFKeySessionError+Private.h>
+#import <YubiKit/YKFKeyU2FService+Private.h>
+#import <YubiKit/YKFKeyU2FRequest+Private.h>
+#import <YubiKit/YKFKeyU2FRegisterResponse+Private.h>
+#import <YubiKit/YKFKeyU2FSignResponse+Private.h>
+#import <YubiKit/YKFKeyService+Private.h>
+#import <YubiKit/YKFAPDU+Private.h>
 
 typedef void (^YKFKeyU2FServiceResultCompletionBlock)(NSData* _Nullable  result, NSError* _Nullable error);
 
@@ -112,7 +112,7 @@ NSString* const YKFKeyU2FServiceProtocolKeyStatePropertyKey = @"keyState";
         if (error) {
             returnedError = error;
         } else {
-            int statusCode = [strongSelf statusCodeFromKeyResponse: result];            
+            int statusCode = [YKFKeyService statusCodeFromKeyResponse: result];
             switch (statusCode) {
                 case YKFKeyAPDUErrorCodeNoError:
                     break;
@@ -164,7 +164,7 @@ NSString* const YKFKeyU2FServiceProtocolKeyStatePropertyKey = @"keyState";
             completion(nil, error);
             return;
         }
-        int statusCode = [strongSelf statusCodeFromKeyResponse: result];
+        int statusCode = [YKFKeyService statusCodeFromKeyResponse: result];
         
         switch (statusCode) {
             case YKFKeyAPDUErrorCodeConditionNotSatisfied: {
@@ -230,12 +230,12 @@ NSString* const YKFKeyU2FServiceProtocolKeyStatePropertyKey = @"keyState";
 #pragma mark - Key responses
 
 - (YKFKeyU2FSignResponse *)processSignData:(NSData *)data request:(YKFKeyU2FSignRequest *)request {
-    NSData *signature = [self dataFromKeyResponse:data];
+    NSData *signature = [YKFKeyService dataFromKeyResponse:data];
     return [[YKFKeyU2FSignResponse alloc] initWithKeyHandle:request.keyHandle clientData:request.clientData signature:signature];
 }
 
 - (YKFKeyU2FRegisterResponse *)processRegisterData:(NSData *)data request:(YKFKeyU2FRegisterRequest *)request {
-    NSData *registrationData = [self dataFromKeyResponse:data];
+    NSData *registrationData = [YKFKeyService dataFromKeyResponse:data];
     return [[YKFKeyU2FRegisterResponse alloc] initWithClientData:request.clientData registrationData:registrationData];
 }
 

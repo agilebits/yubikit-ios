@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <YubiKit/YubiKit.h>
 
-#import "TestDataGenerator.h"
+#import "TestDataGenerator.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

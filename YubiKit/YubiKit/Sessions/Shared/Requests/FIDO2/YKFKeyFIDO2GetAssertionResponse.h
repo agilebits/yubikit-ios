@@ -13,7 +13,7 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import "YKFFIDO2Type.h"
+#import <YubiKit/YKFFIDO2Type.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

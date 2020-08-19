@@ -13,11 +13,11 @@
 // limitations under the License.
 
 #import <XCTest/XCTest.h>
-#import "YKFTestCase.h"
-#import "YKFKeyRawCommandService.h"
-#import "YKFKeyRawCommandService+Private.h"
-#import "FakeYKFKeyConnectionController.h"
-#import "YKFAPDU+Private.h"
+#import <YubiKit/YKFTestCase.h>
+#import <YubiKit/YKFKeyRawCommandService.h>
+#import <YubiKit/YKFKeyRawCommandService+Private.h>
+#import "FakeYKFKeyConnectionController.h>
+#import <YubiKit/YKFAPDU+Private.h>
 
 @interface YKFKeyRawCommandServiceTests: YKFTestCase
 

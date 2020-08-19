@@ -12,19 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKeyService.h"
-#import "YKFKeyService+Private.h"
-#import "YKFAccessoryConnectionController.h"
-#import "YKFNSDataAdditions.h"
-#import "YKFNSDataAdditions+Private.h"
-#import "YKFKeyAPDUError.h"
-#import "YKFAssert.h"
+#import <YubiKit/YKFKeyService.h>
+#import <YubiKit/YKFKeyService+Private.h>
+#import <YubiKit/YKFAccessoryConnectionController.h>
+#import <YubiKit/YKFNSDataAdditions.h>
+#import <YubiKit/YKFNSDataAdditions+Private.h>
+#import <YubiKit/YKFKeyAPDUError.h>
+#import <YubiKit/YKFAssert.h>
 
 @implementation YKFKeyService
 
 #pragma mark - Key Response
 
-- (NSData *)dataFromKeyResponse:(NSData *)response {
++ (NSData *)dataFromKeyResponse:(NSData *)response {
     YKFParameterAssertReturnValue(response, [NSData data]);
     YKFAssertReturnValue(response.length >= 2, @"Key response data is too short.", [NSData data]);
     
@@ -38,14 +38,14 @@
 
 #pragma mark - Status Code
 
-- (UInt16)statusCodeFromKeyResponse:(NSData *)response {    
++ (UInt16)statusCodeFromKeyResponse:(NSData *)response {
     YKFParameterAssertReturnValue(response, YKFKeyAPDUErrorCodeWrongLength);
     YKFAssertReturnValue(response.length >= 2, @"Key response data is too short.", YKFKeyAPDUErrorCodeWrongLength);
     
     return [response ykf_getBigEndianIntegerInRange:NSMakeRange([response length] - 2, 2)];
 }
 
-- (UInt8)shortStatusCodeFromStatusCode:(UInt16)statusCode {
++ (UInt8)shortStatusCodeFromStatusCode:(UInt16)statusCode {
     return (UInt8)(statusCode >> 8);
 }
 

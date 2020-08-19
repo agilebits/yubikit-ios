@@ -15,7 +15,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import "YKFView.h"
+#import <YubiKit/YKFView.h>
 
 @class YKFQRCodeScanOverlayView;
 @protocol YKFQRCodeScanOverlayViewDelegate<NSObject>

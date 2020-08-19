@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "UIWindowAdditions.h"
+#import <YubiKit/UIWindowAdditions.h>
 
 @implementation UIWindow(YKFSafeReagion)
 

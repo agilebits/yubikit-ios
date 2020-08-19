@@ -20,8 +20,8 @@
 //    the PC/SC interface, specific to YubiKit.
 
 #import <Foundation/Foundation.h>
-#import "YKFPCSCErrors.h"
-#import "YKFPCSCTypes.h"
+#import <YubiKit/YKFPCSCErrors.h>
+#import <YubiKit/YKFPCSCTypes.h>
 
 /*!
  @abstract

@@ -6,7 +6,7 @@
 //  Copyright © 2018 Yubico. All rights reserved.
 //
 
-#import "TestSharedLogger.h"
+#import "TestSharedLogger.h>
 
 @implementation TestSharedLogger
 

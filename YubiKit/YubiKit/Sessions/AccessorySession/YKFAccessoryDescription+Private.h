@@ -14,8 +14,8 @@
 
 #import <ExternalAccessory/ExternalAccessory.h>
 #import <Foundation/Foundation.h>
-#import "YKFAccessoryDescription.h"
-#import "EAAccessory+Testing.h"
+#import <YubiKit/YKFAccessoryDescription.h>
+#import <YubiKit/EAAccessory+Testing.h>
 
 @interface YKFAccessoryDescription()
 

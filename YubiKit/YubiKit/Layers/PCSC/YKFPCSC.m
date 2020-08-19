@@ -12,10 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFPCSC.h"
-#import "YKFPCSCLayer.h"
-#import "YubiKitManager.h"
-#import "YKFAssert.h"
+#import <YubiKit/YKFPCSC.h>
+#import <YubiKit/YKFPCSCLayer.h>
+#import <YubiKit/YubiKitManager.h>
+#import <YubiKit/YKFAssert.h>
 
 /*
  Assigns a random context value and creates the PC/SC communication layer.

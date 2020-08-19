@@ -14,9 +14,10 @@
 
 #import <XCTest/XCTest.h>
 
-#import "YKFTestCase.h"
-#import "YKFOATHCredential.h"
-#import "YKFOATHCredential+Private.h"
+#import <YubiKit/YKFNSStringAdditions.h>
+#import <YubiKit/YKFTestCase.h>
+#import <YubiKit/YKFOATHCredential.h>
+#import <YubiKit/YKFOATHCredential+Private.h>
 
 @interface YKFOATHCredentialTests : XCTestCase
 @end
@@ -148,14 +149,6 @@
 }
 
 #pragma mark - Label
-
-- (void)test_WhenCredentialIsManuallyCreatedWithLabel_AssignedLabelIsReturnedWhenReadingTheProperty {
-    YKFOATHCredential *credential = [[YKFOATHCredential alloc] init];
-    NSString *label = @"issuer:account";
-    
-    credential.label = label;
-    XCTAssert([credential.label isEqualToString:label], @"Credential label is not returned if assigned.");
-}
 
 - (void)test_WhenCredentialIsManuallyCreatedWithoutLabel_LabelIsBuildFromTheIssuerAndAccount {
     YKFOATHCredential *credential = [[YKFOATHCredential alloc] init];

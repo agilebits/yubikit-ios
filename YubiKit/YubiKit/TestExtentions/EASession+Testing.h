@@ -14,7 +14,7 @@
 
 #import <Foundation/Foundation.h>
 #import <ExternalAccessory/ExternalAccessory.h>
-#import "EAAccessory+Testing.h"
+#import <YubiKit/EAAccessory+Testing.h>
 
 @protocol YKFEASessionProtocol<NSObject>
 

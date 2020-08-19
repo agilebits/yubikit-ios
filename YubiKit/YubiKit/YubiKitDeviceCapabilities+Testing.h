@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YubiKitDeviceCapabilities.h"
-#import "UIDevice+Testing.h"
+#import <YubiKit/YubiKitDeviceCapabilities.h>
+#import <YubiKit/UIDevice+Testing.h>
 
 #ifdef DEBUG
 

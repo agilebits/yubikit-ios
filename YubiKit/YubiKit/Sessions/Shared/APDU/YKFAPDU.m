@@ -12,10 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFAPDU.h"
-#import "YKFAccessoryConnectionController.h"
-#import "YKFNSMutableDataAdditions.h"
-#import "YKFAssert.h"
+#import <YubiKit/YKFAPDU.h>
+#import <YubiKit/YKFAccessoryConnectionController.h>
+#import <YubiKit/YKFNSMutableDataAdditions.h>
+#import <YubiKit/YKFAssert.h>
 
 @interface YKFAPDU()
 

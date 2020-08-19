@@ -12,11 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKeyOATHCalculateAllResponse.h"
-#import "YKFKeyOATHCalculateAllResponse+Private.h"
-#import "YKFAssert.h"
-#import "YKFNSStringAdditions.h"
-#import "YKFNSDataAdditions+Private.h"
+#import <YubiKit/YKFKeyOATHCalculateAllResponse.h>
+#import <YubiKit/YKFKeyOATHCalculateAllResponse+Private.h>
+#import <YubiKit/YKFAssert.h>
+#import <YubiKit/YKFNSStringAdditions.h>
+#import <YubiKit/YKFNSDataAdditions+Private.h>
 
 static const UInt8 YKFKeyOATHCalculateAllNameTag = 0x71;
 static const UInt8 YKFKeyOATHCalculateAllResponseHOTPTag = 0x77;

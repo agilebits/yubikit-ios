@@ -8,10 +8,10 @@
 
 #import <XCTest/XCTest.h>
 
-#import "MoLYService.h"
-#import "TestSharedLogger.h"
+#import "MoLYService.h>
+#import "TestSharedLogger.h>
 
-static NSString* const MOYServiceEndpoint = @"http://192.168.2.2:8080/moly";
+static NSString* const MOYServiceEndpoint = @"http://moly01.local:8080/moly";
 
 @interface MoLYService ()
 

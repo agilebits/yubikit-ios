@@ -14,21 +14,21 @@
 
 #import <CoreNFC/CoreNFC.h>
 
-#import "YubiKitDeviceCapabilities.h"
-#import "YubiKitExternalLocalization.h"
+#import <YubiKit/YubiKitDeviceCapabilities.h>
+#import <YubiKit/YubiKitExternalLocalization.h>
 
-#import "YKFNFCConnectionController.h"
-#import "YKFNFCSession.h"
-#import "YKFBlockMacros.h"
-#import "YKFLogger.h"
-#import "YKFAssert.h"
+#import <YubiKit/YKFNFCConnectionController.h>
+#import <YubiKit/YKFNFCSession.h>
+#import <YubiKit/YKFBlockMacros.h>
+#import <YubiKit/YKFLogger.h>
+#import <YubiKit/YKFAssert.h>
 
-#import "YKFNFCOTPService+Private.h"
-#import "YKFKeyU2FService+Private.h"
-#import "YKFKeyFIDO2Service+Private.h"
-#import "YKFKeyOATHService+Private.h"
-#import "YKFKeyRawCommandService+Private.h"
-#import "YKFNFCTagDescription+Private.h"
+#import <YubiKit/YKFNFCOTPService+Private.h>
+#import <YubiKit/YKFKeyU2FService+Private.h>
+#import <YubiKit/YKFKeyFIDO2Service+Private.h>
+#import <YubiKit/YKFKeyOATHService+Private.h>
+#import <YubiKit/YKFKeyRawCommandService+Private.h>
+#import <YubiKit/YKFNFCTagDescription+Private.h>
 
 @interface YKFNFCSession()<NFCTagReaderSessionDelegate>
 

@@ -13,7 +13,7 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import "YubiKitDeviceCapabilities.h"
+#import "YubiKitDeviceCapabilities.h>
 
 @interface FakeYubiKitDeviceCapabilities : NSObject<YubiKitDeviceCapabilitiesProtocol>
 @end

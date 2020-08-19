@@ -13,8 +13,8 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import "YKFOATHCredential.h"
-#import "YKFKeySessionError.h"
+#import <YubiKit/YKFOATHCredential.h>
+#import <YubiKit/YKFKeySessionError.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

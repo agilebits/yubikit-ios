@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKVOObservation.h"
-#import "YKFAssert.h"
+#import <YubiKit/YKFKVOObservation.h>
+#import <YubiKit/YKFAssert.h>
 
 static const int YKFKVOObservationContext = 0;
 

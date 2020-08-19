@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKeyAPDUError.h"
+#import <YubiKit/YKFKeyAPDUError.h>
 
 @implementation YKFKeyAPDUError
 @end

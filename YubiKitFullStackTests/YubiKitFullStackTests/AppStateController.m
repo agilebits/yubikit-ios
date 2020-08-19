@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AppStateController.h"
-#import "Configuration.h"
+#import "AppStateController.h>
+#import "Configuration.h>
 
 @implementation AppStateController
 

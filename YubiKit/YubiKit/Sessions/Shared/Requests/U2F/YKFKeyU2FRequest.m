@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFKeyU2FRequest.h"
-#import "YKFKeyU2FRequest+Private.h"
+#import <YubiKit/YKFKeyU2FRequest.h>
+#import <YubiKit/YKFKeyU2FRequest+Private.h>
 
 static const int YKFKeyU2FRequestMaxRetries = 30; // times
 static const NSTimeInterval YKFKeyU2FRequestRetryTimeInterval = 0.5; // seconds

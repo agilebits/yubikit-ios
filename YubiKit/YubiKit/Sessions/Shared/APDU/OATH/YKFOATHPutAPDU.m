@@ -12,12 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFOATHPutAPDU.h"
-#import "YKFKeyOATHPutRequest.h"
-#import "YKFAPDUCommandInstruction.h"
-#import "YKFAssert.h"
-#import "YKFNSMutableDataAdditions.h"
-#import "YKFOATHCredential+Private.h"
+#import <YubiKit/YKFOATHPutAPDU.h>
+#import <YubiKit/YKFKeyOATHPutRequest.h>
+#import <YubiKit/YKFAPDUCommandInstruction.h>
+#import <YubiKit/YKFAssert.h>
+#import <YubiKit/YKFNSMutableDataAdditions.h>
+#import <YubiKit/YKFOATHCredential+Private.h>
 
 typedef NS_ENUM(NSUInteger, YKFOATHPutCredentialAPDUTag) {
     YKFOATHPutCredentialAPDUTagName = 0x71,

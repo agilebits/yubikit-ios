@@ -13,7 +13,7 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import "YKFKeyRequest.h"
+#import <YubiKit/YKFKeyRequest.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

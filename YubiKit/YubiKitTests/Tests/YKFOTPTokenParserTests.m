@@ -14,14 +14,14 @@
 
 #import <XCTest/XCTest.h>
 
-#import "YKFTestCase.h"
-#import "YKFOTPTokenParser.h"
-#import "YKFOTPURIParserProtocol.h"
-#import "YKFOTPTextParserProtocol.h"
-#import "YubiKitConfiguration.h"
+#import <YubiKit/YKFTestCase.h>
+#import <YubiKit/YKFOTPTokenParser.h>
+#import <YubiKit/YKFOTPURIParserProtocol.h>
+#import <YubiKit/YKFOTPTextParserProtocol.h>
+#import "YubiKitConfiguration.h>
 
-#import "FakeYKFOTPTextParser.h"
-#import "FakeYKFOTPURIParser.h"
+#import "FakeYKFOTPTextParser.h>
+#import "FakeYKFOTPURIParser.h>
 
 @interface YKFOTPTokenParserTests: YKFTestCase
 

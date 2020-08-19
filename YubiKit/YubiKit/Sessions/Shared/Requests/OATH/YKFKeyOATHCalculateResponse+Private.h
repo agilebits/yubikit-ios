@@ -13,7 +13,7 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import "YKFKeyOATHCalculateResponse.h"
+#import <YubiKit/YKFKeyOATHCalculateResponse.h>
 
 @interface YKFKeyOATHCalculateResponse()
 

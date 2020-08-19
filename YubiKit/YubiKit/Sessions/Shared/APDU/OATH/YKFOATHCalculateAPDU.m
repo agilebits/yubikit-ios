@@ -12,21 +12,21 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFOATHCalculateAPDU.h"
-#import "YKFKeyOATHCalculateRequest.h"
-#import "YKFAPDUCommandInstruction.h"
-#import "YKFAssert.h"
-#import "YKFNSMutableDataAdditions.h"
-#import "YKFOATHCredential+Private.h"
+#import <YubiKit/YKFOATHCalculateAPDU.h>
+#import <YubiKit/YKFKeyOATHCalculateRequest.h>
+#import <YubiKit/YKFAPDUCommandInstruction.h>
+#import <YubiKit/YKFAssert.h>
+#import <YubiKit/YKFNSMutableDataAdditions.h>
+#import <YubiKit/YKFOATHCredential+Private.h>
+#import <YubiKit/YKFKeyOATHCalculateRequest+Private.h>
 
 static const UInt8 YKFOATHCalculateAPDUNameTag = 0x71;
 static const UInt8 YKFOATHCalculateAPDUChallengeTag = 0x74;
 
 @implementation YKFOATHCalculateAPDU
 
-- (nullable instancetype)initWithRequest:(nonnull YKFKeyOATHCalculateRequest *)request timestamp:(NSDate *)timestamp {
+- (nullable instancetype)initWithRequest:(nonnull YKFKeyOATHCalculateRequest *)request {
     YKFAssertAbortInit(request);
-    YKFAssertAbortInit(timestamp);
     
     NSMutableData *rawRequest = [[NSMutableData alloc] init];
     
@@ -39,7 +39,7 @@ static const UInt8 YKFOATHCalculateAPDUChallengeTag = 0x74;
     // Challenge
     
     if (request.credential.type == YKFOATHCredentialTypeTOTP) {
-        time_t time = (time_t)[timestamp timeIntervalSince1970];
+        time_t time = (time_t)[request.timestamp timeIntervalSince1970];
         time_t challengeTime = time / request.credential.period;
         
         [rawRequest ykf_appendUInt64EntryWithTag:YKFOATHCalculateAPDUChallengeTag value:challengeTime];

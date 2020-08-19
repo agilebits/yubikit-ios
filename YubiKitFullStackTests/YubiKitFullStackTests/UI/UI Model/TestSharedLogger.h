@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "LoggingViewController.h"
+#import "LoggingViewController.h>
 
 @interface TestSharedLogger : NSObject
 

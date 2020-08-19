@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFOATHResetAPDU.h"
-#import "YKFAPDUCommandInstruction.h"
+#import <YubiKit/YKFOATHResetAPDU.h>
+#import <YubiKit/YKFAPDUCommandInstruction.h>
 
 @implementation YKFOATHResetAPDU
 

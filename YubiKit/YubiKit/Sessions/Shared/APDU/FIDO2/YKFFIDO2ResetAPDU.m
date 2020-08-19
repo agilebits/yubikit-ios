@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFFIDO2ResetAPDU.h"
+#import <YubiKit/YKFFIDO2ResetAPDU.h>
 
 @implementation YKFFIDO2ResetAPDU
 

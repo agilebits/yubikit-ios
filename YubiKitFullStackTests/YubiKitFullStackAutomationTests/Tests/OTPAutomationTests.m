@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-#import "AutomationTest.h"
-#import "OTPValidationWebService.h"
-#import "TestSharedLogger.h"
+#import "AutomationTest.h>
+#import "OTPValidationWebService.h>
+#import "TestSharedLogger.h>
 
-#import "LoggingViewController.h"
+#import "LoggingViewController.h>
 
 // Smoke tests iterations
 static const int OTPAutomationTestsOtpGenerationIterations = 20;

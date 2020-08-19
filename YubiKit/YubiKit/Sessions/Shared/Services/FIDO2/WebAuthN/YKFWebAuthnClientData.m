@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#import "YKFWebAuthnClientData.h"
-#import "YKFNSDataAdditions.h"
-#import "YKFAssert.h"
+#import <YubiKit/YKFWebAuthnClientData.h>
+#import <YubiKit/YKFNSDataAdditions.h>
+#import <YubiKit/YKFAssert.h>
 
 @interface YKFWebAuthnClientData()
 

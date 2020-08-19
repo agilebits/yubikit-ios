@@ -13,12 +13,12 @@
 // limitations under the License.
 
 #import <CommonCrypto/CommonCrypto.h>
-#import "YKFOATHCredentialValidator.h"
-#import "YKFKeyOATHError.h"
-#import "YKFAssert.h"
+#import <YubiKit/YKFOATHCredentialValidator.h>
+#import <YubiKit/YKFKeyOATHError.h>
+#import <YubiKit/YKFAssert.h>
 
-#import "YKFKeySessionError+Private.h"
-#import "YKFOATHCredential+Private.h"
+#import <YubiKit/YKFKeySessionError+Private.h>
+#import <YubiKit/YKFOATHCredential+Private.h>
 
 static const int YKFOATHCredentialValidatorMaxNameSize = 64;
 

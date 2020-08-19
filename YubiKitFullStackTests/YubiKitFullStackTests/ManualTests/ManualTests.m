@@ -6,9 +6,9 @@
 //  Copyright © 2018 Yubico. All rights reserved.
 //
 
-#import "ManualTests.h"
-#import "TestSharedLogger.h"
-#import "KeyCommandResponseParser.h"
+#import "ManualTests.h>
+#import "TestSharedLogger.h>
+#import "KeyCommandResponseParser.h>
 
 typedef NS_ENUM(NSUInteger, ManualTestsInstruction) {
     ManualTestsInstructionU2FPing = 0x40
@@ -84,6 +84,11 @@ typedef NS_ENUM(NSUInteger, ManualTestsInstruction) {
     NSArray *oathAddAndCalculateTestEntry = @[@"OATH Put and Calculate", @"Puts, calculates and removes a credential.", oathAddAndCalculateSelector];
     [oathTests addObject:oathAddAndCalculateTestEntry];
     
+    // Add credential and rename it
+    NSValue *oathAddAndRenameSelector = [NSValue valueWithPointer:@selector(test_WhenRenamingAnOATHCredential_CredentialIsRenamed)];
+    NSArray *oathAddAndRenameTestEntry = @[@"OATH Put and Rename", @"Puts, renames and removes a credential.", oathAddAndRenameSelector];
+    [oathTests addObject:oathAddAndRenameTestEntry];
+    
     //// -------------------------------------------------------------------------------------------------------------------------------------------------------
     //// Challenge/Response tests
     NSMutableArray *chalRespTests = [[NSMutableArray alloc] init];
@@ -92,6 +97,14 @@ typedef NS_ENUM(NSUInteger, ManualTestsInstruction) {
     NSValue *hmacChalSlot1Resp = [NSValue valueWithPointer:@selector(test_WhenSendingChallengeToSlot1_KeySendsHmacResponse)];
     NSArray *hmacChalSlot1RespTestEntry = @[@"HMAC Chal", @"Performs a Challenge/Response.", hmacChalSlot1Resp];
     [chalRespTests addObject:hmacChalSlot1RespTestEntry];
+
+    //// -------------------------------------------------------------------------------------------------------------------------------------------------------
+    //// Management tests
+    NSMutableArray *mgmtTests = [[NSMutableArray alloc] init];
+
+    NSValue *selector = [NSValue valueWithPointer:@selector(test_WhenDisablingOTPApplicationOverNFCandUSB)];
+    NSArray *testEntry = @[@"MGMT read and write", @"Enables/disables YubiKey interfaces", selector];
+    [mgmtTests addObject:testEntry];
 
     //// -------------------------------------------------------------------------------------------------------------------------------------------------------
     //// PIV tests
@@ -161,6 +174,7 @@ typedef NS_ENUM(NSUInteger, ManualTestsInstruction) {
                       @[@"Application version tests", applicationVersionTests],
                       @[@"OATH Tests", oathTests],
                       @[@"Chal/Resp Tests", chalRespTests],
+                      @[@"Management Tests", mgmtTests],
                       @[@"PIV Tests", pivTests],
                       @[@"Touch Tests", touchTests],
                       @[@"FIDO2 Tests", fido2Tests]];
@@ -357,6 +371,92 @@ typedef NS_ENUM(NSUInteger, ManualTestsInstruction) {
     }];
 }
 
+- (void)test_WhenRenamingAnOATHCredential_CredentialIsRenamed {
+    // This is an URL conforming to Key URI Format specs.
+    NSString *oathUrlString = @"otpauth://totp/Yubico:example@yubico.com?secret=UOA6FJYR76R7IRZBGDJKLYICL3MUR7QH&issuer=Yubico&algorithm=SHA1&digits=6&period=30";
+    NSURL *url = [NSURL URLWithString:oathUrlString];
+    if (!url) {
+        [TestSharedLogger.shared logError:@"Invalid OATH URL."];
+        return;
+    }
+    
+    // Create the credential from the URL using the convenience initializer.
+    YKFOATHCredential *credential = [[YKFOATHCredential alloc] initWithURL:url];
+    if (!credential) {
+        [TestSharedLogger.shared logError:@"Could not create OATH credential."];
+        return;
+    }
+    id<YKFKeyOATHServiceProtocol> oathService = YubiKitManager.shared.accessorySession.oathService;
+    
+    /*
+     1. Add the credential to the key
+     */
+    YKFKeyOATHPutRequest *putRequest = [[YKFKeyOATHPutRequest alloc] initWithCredential:credential];
+    
+    [oathService executePutRequest:putRequest completion:^(NSError * _Nullable error) {
+        if (error) {
+            [TestSharedLogger.shared logError:@"Could not add the credential to the key."];
+            return;
+        }
+        [TestSharedLogger.shared logSuccess:@"The credential was added to the key."];
+    }];
+    
+    /*
+     2. Rename the credential.
+     */
+    YKFKeyOATHRenameRequest *renameRequest = [[YKFKeyOATHRenameRequest alloc] initWithCredential:credential issuer:@"Transnomino Inc" account:@"renamed-account@yubico.com"];
+
+    [oathService executeRenameRequest:renameRequest completion:^(NSError * _Nullable error) {
+        if (error) {
+            [TestSharedLogger.shared logError:@"Could not rename the credential. %@", error];
+            return;
+        }
+        [TestSharedLogger.shared logSuccess:@"Credential renamed"];
+    }];
+    
+    /*
+     3. List credentials and verify that the credential has been renamed
+     */
+    [oathService executeListRequestWithCompletion:^(YKFKeyOATHListResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            [TestSharedLogger.shared logError:@"Could not list credentials. %@", error];
+        }
+        
+        YKFOATHCredential* renamedCredential;
+        for (YKFOATHCredential* credential in response.credentials) {
+            if ([credential.issuer isEqual:@"Transnomino Inc"] && [credential.account isEqual:@"renamed-account@yubico.com"]) {
+                renamedCredential = credential;
+                break;
+            }
+        }
+        
+        if (renamedCredential) {
+            [TestSharedLogger.shared logSuccess:@"Retrieved and verified renamed credential from key"];
+            
+            YKFKeyOATHDeleteRequest *deleteRequest = [[YKFKeyOATHDeleteRequest alloc] initWithCredential:renamedCredential];
+            
+            [oathService executeDeleteRequest:deleteRequest completion:^(NSError * _Nullable error) {
+                if (error) {
+                    [TestSharedLogger.shared logError:@"Could not delete the credential. %@", error];
+                    return;
+                }
+                [TestSharedLogger.shared logSuccess:@"The credential was removed from the key."];
+            }];
+            
+        } else {
+            YKFKeyOATHDeleteRequest *deleteRequest = [[YKFKeyOATHDeleteRequest alloc] initWithCredential:credential];
+            [oathService executeDeleteRequest:deleteRequest completion:^(NSError * _Nullable error) {
+                if (error) {
+                    [TestSharedLogger.shared logError:@"Could not delete the credential. %@", error];
+                    return;
+                }
+                [TestSharedLogger.shared logSuccess:@"The credential was removed from the key."];
+            }];
+            [TestSharedLogger.shared logError:@"Failed retrieving renamed credential"];
+        }
+    }];
+}
+
 #pragma mark - Challenge/Response Tests
 
 // HMAC-SHA1 with f6d6475b48b94f0d849a6c19bf8cc7f0d62255a0 as a secret
@@ -365,10 +465,39 @@ typedef NS_ENUM(NSUInteger, ManualTestsInstruction) {
 - (void)test_WhenSendingChallengeToSlot1_KeySendsHmacResponse {
     NSString *hexString = @"313233343536";
     NSData *data = [self.testDataGenerator dataFromHexString:hexString];
+    [TestSharedLogger.shared logMessage:@"Challenge data:\n%@", data];
+
+    [TestSharedLogger.shared logMessage:@"Using YKFKeyChallengeResponseService"];
+
+    YKFKeyChallengeResponseService *service = [[YKFKeyChallengeResponseService alloc] init];
+
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    
+    [service sendChallenge:data slot:YKFSlotOne completion:^(NSData *result, NSError *error) {
+        if (error) {
+            [TestSharedLogger.shared logError: @"When requesting challenge: %@", error.localizedDescription];
+            dispatch_semaphore_signal(semaphore);
+            return;
+        }
+        [TestSharedLogger.shared logMessage:@"Received data length: %d", result.length];
+
+        [TestSharedLogger.shared logMessage:@"Response data:\n%@", result];
+        dispatch_semaphore_signal(semaphore);
+    }];
+    
+    // waiting until completed before starting another test
+    long timeout = dispatch_semaphore_wait(semaphore, dispatch_time(DISPATCH_TIME_NOW, 20 * NSEC_PER_SEC));
+    if (timeout) {
+        [TestSharedLogger.shared logMessage:@"Failed with timeout"];
+    }
 
     [self executeYubiKeyApplicationSelection];
 
+    // another method of doing challenge response without YKFKeyChallengeResponseService
     YKFAPDU *apdu = [[YKFAPDU alloc] initWithCla:0 ins:0x01 p1:0x30 p2:0 data:data type:YKFAPDUTypeShort];
+
+    [TestSharedLogger.shared logSepparator];
+    [TestSharedLogger.shared logMessage:@"Using YKFKeyRawCommandService"];
 
     [self executeCommandWithAPDU:apdu completion:^(NSData *result, NSError *error) {
         if (error) {
@@ -378,8 +507,60 @@ typedef NS_ENUM(NSUInteger, ManualTestsInstruction) {
         [TestSharedLogger.shared logMessage:@"Received data length: %d", result.length];
 
         NSData *respData = [result subdataWithRange:NSMakeRange(0, result.length - 2)];
-        [TestSharedLogger.shared logMessage:@"Challenge data:\n%@", data];
         [TestSharedLogger.shared logMessage:@"Response data:\n%@", respData];
+    }];
+}
+
+#pragma mark MGMT (management) Tests
+
+- (void) test_WhenDisablingOTPApplicationOverNFCandUSB {
+    YKFKeyMGMTService *service = [[YKFKeyMGMTService alloc] init];
+    [service readConfigurationWithCompletion:^(YKFKeyMGMTReadConfigurationResponse *selectionResponse, NSError *error) {
+        if (error) {
+            [TestSharedLogger.shared logError: @"When reading configurations: %@", error.localizedDescription];
+            return;
+        }
+        YKFMGMTInterfaceConfiguration *configuration = selectionResponse.configuration;
+        
+        YKFMGMTTransportType transport = YKFMGMTTransportTypeNFC;
+        if(![configuration isSupported:YKFMGMTApplicationTypeOTP overTransport:transport]) {
+            [TestSharedLogger.shared logMessage:@"OTP over NFC is not supported"];
+            transport = YKFMGMTTransportTypeUSB;
+        }
+        
+        BOOL isOTPenabled = [configuration isEnabled:YKFMGMTApplicationTypeOTP overTransport:transport];
+        if (isOTPenabled) {
+            [TestSharedLogger.shared logMessage:@"OTP is enabled"];
+        } else {
+            [TestSharedLogger.shared logMessage:@"OTP is disabled"];
+        }
+
+        [configuration setEnabled:!isOTPenabled application:YKFMGMTApplicationTypeOTP overTransport:transport];
+        
+        [TestSharedLogger.shared logMessage:@"Updating configuration"];
+        [service writeConfiguration:configuration reboot:NO completion:^(NSError * _Nullable error) {
+            if (error) {
+                [TestSharedLogger.shared logError: @"When writing configurations: %@", error.localizedDescription];
+                return;
+            }
+            
+            [TestSharedLogger.shared logMessage:@"Configuration has been updated."];
+
+            [service readConfigurationWithCompletion:^(YKFKeyMGMTReadConfigurationResponse *selectionResponse, NSError *error) {
+                if (error) {
+                    [TestSharedLogger.shared logError: @"When reading configurations: %@", error.localizedDescription];
+                    return;
+                }
+                YKFMGMTInterfaceConfiguration *configuration = selectionResponse.configuration;
+
+                BOOL isOTPenabled = [configuration isEnabled:YKFMGMTApplicationTypeOTP overTransport:transport];
+                if (isOTPenabled) {
+                    [TestSharedLogger.shared logMessage:@"OTP is enabled"];
+                } else {
+                    [TestSharedLogger.shared logMessage:@"OTP is disabled"];
+                }
+            }];
+        }];
     }];
 }
 

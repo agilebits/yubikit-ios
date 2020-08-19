@@ -14,7 +14,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "YKFViewController.h"
+#import <YubiKit/YKFViewController.h>
 
 @class YKFQRCodeScanViewController;
 @protocol YKFQRCodeScanViewControllerDelegate<NSObject>

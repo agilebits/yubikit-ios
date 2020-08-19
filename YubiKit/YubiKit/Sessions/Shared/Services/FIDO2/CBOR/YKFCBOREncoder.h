@@ -13,7 +13,7 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import "YKFCBORType.h"
+#import <YubiKit/YKFCBORType.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

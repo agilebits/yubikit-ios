@@ -6,9 +6,9 @@
 //  Copyright © 2019 Yubico. All rights reserved.
 //
 
-#import "YKFNFCTagDescription.h"
-#import "YKFNFCTagDescription+Private.h"
-#import "YKFAssert.h"
+#import <YubiKit/YKFNFCTagDescription.h>
+#import <YubiKit/YKFNFCTagDescription+Private.h>
+#import <YubiKit/YKFAssert.h>
 
 @interface YKFNFCTagDescription()
 
