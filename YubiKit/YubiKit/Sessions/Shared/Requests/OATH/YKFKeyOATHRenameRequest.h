@@ -13,8 +13,8 @@
 // limitations under the License.
 
 #import <Foundation/Foundation.h>
-#import "YKFKeyOATHRequest.h"
-#import "YKFOATHCredential.h"
+#import <YubiKit/YKFKeyOATHRequest.h>
+#import <YubiKit/YKFOATHCredential.h>
 
 /*!
  @class YKFKeyOATHRenameRequest
